@@ -1,9 +1,28 @@
-.nav-bar{
-display: flex;
-flex-direction: row;
-justify-content: space-between;
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0em 0em 0em 4em;
+    padding: 1.5em 0em 1.5em 0em;
+    align-items: center
 }
 
 .nav-links {
-  
+    @extend.nav-bar;
+    margin: 0em 4em 0em 0em;
+}
+
+.nav-links a {
+    margin-right: 1em;
+}
+
+.theme-logo {
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
 }
