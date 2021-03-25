@@ -39,6 +39,28 @@ body.light {
     outline:0;
 }
 
+.hello-container {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.hello-me {
+    display: flex;
+    flex-direction: column;
+}
+
+.work-with-me {
+    background-color: rgb(206, 39, 206);
+    width: 150px;
+    color: white;
+    text-align: center;
+    padding: 10px 0px 10px 0px;
+    border-radius: 5px;
+}
+
 #myMask2 > circle {
-    cy:3px !important;
+    cy:2px !important;
 }

@@ -1,4 +1,5 @@
 import './App.scss';
+import me from './img/me.png'
 import * as React from 'react';
 import { useState } from 'react';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
@@ -14,7 +15,7 @@ const App = (props) => {
   const themeToggler = () => {
     theme === 'light' ? setTheme('dark') : setTheme('light')
     toggleDarkMode(theme === 'light' ? (true) : (false))
-}
+  }
   const toggleDarkMode = (checked: boolean) => {
     setDarkMode(checked);
   };
@@ -39,7 +40,12 @@ const App = (props) => {
           </div>
         </nav>
         <section className='hello-container'>
-
+          <div className='hello-me'>
+            <h1>hello!</h1>
+            <h2>I'm Josh, a software developer in Brighton, CO</h2>
+            <a className='work-with-me' href='#contactForm'> Work With Me</a>
+          </div>
+          <img src={me} height='500px'></img>
         </section>
       </>
     </ThemeProvider>
