@@ -1,6 +1,7 @@
 import './App.scss';
 import me from './img/me.png'
 import * as React from 'react';
+import Card from './Card.js'
 import { useState } from 'react';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import { ThemeProvider } from "styled-components";
@@ -8,7 +9,6 @@ import { GlobalStyles } from "./globalStyles.js";
 import { lightTheme, darkTheme } from "./Themes.js"
 
 const App = (props) => {
-  console.log(props)
   const [isDarkMode, setDarkMode] = useState(false);
   const [theme, setTheme] = useState('light');
 
@@ -28,9 +28,9 @@ const App = (props) => {
         <nav className='nav-bar'>
           <a href=''>Josh Aragon</a>
           <div className='nav-links'>
-            <a href='#aboutMe'>About me</a>
-            <a href='#myWork'>My Work</a>
-            <a href='#contactForm'>Contact Me</a>
+            <a href='#aboutMe'>about me</a>
+            <a href='#myWork'>my work</a>
+            <a href='#contactForm'>contact Me</a>
             <DarkModeSwitch
               style={{ marginBottom: '.35rem' }}
               checked={isDarkMode}
@@ -45,7 +45,18 @@ const App = (props) => {
             <h2>I'm Josh, a software developer in Brighton, CO</h2>
             <a className='work-with-me' href='#contactForm'> Work With Me</a>
           </div>
-          <img src={me} height='500px'></img>
+          <img src={me} className='me-image' height='500px'></img>
+        </section>
+        <section className='my-work'>
+          <h1>my projects</h1>
+          <div className='my-project-container'>
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          </div>
         </section>
       </>
     </ThemeProvider>

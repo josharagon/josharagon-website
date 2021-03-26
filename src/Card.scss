@@ -1,0 +1,29 @@
+.project-cards {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: fit-content;
+    text-align: left;
+    margin: .5em 1em .5em 1em;
+    padding: .5em .5em .5em .5em;
+    box-shadow:  0 0 1em black;
+}
+
+.project-cards > h2 {
+    margin: 5px 0 0 0;
+    font-size: 20px;
+}
+
+.preview-image {
+    height: 300px;
+}
+
+.card-footer {
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-footer > a {
+    margin: 0;
+}

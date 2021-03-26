@@ -1,28 +1,18 @@
 
-
-body.light {
-    background-color: white;
-    color: black;
-
-    &button {
-        color: white;
-    }
-
-
+body {
+    margin: 0px 5em 0px 5em;
 }
 
 .nav-bar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 0em 0em 0em 4em;
     padding: 1.5em 0em 1.5em 0em;
     align-items: center
 }
 
 .nav-links {
     @extend.nav-bar;
-    margin: 0em 4em 0em 0em;
 }
 
  a {
@@ -63,4 +53,23 @@ body.light {
 
 #myMask2 > circle {
     cy:2px !important;
+}
+
+.me-image {
+    -webkit-user-drag: none;
+}
+.my-work {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.my-project-container {
+    display: flex;
+    width: 100%;
+    align-content: flex-start;
+    flex-wrap: wrap;
 }
