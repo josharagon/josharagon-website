@@ -13,7 +13,12 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      projects: [ {id: 1, name: 'FitLit Fitness Tracker', description: '', preview: 'https://user-images.githubusercontent.com/72054706/109868661-27e6bf80-7c25-11eb-90a7-eab43cfddc43.png', githubLink: 'https://github.com/josharagon/FitLit-Activity-Tracker', liveLink: ''}
+      projects: [ {id: 1, name: 'FitLit Fitness Tracker', description: '', preview: 'https://user-images.githubusercontent.com/72054706/109868661-27e6bf80-7c25-11eb-90a7-eab43cfddc43.png', githubLink: 'https://github.com/josharagon/FitLit-Activity-Tracker', liveLink: ''},
+      {id: 2, name: 'What\'s Cookin\' Recipe Site', description: '', preview: 'https://github.com/josharagon/whats-cookin-starter-kit/raw/main/src/images/homeScreen.png', githubLink: 'https://github.com/josharagon/whats-cookin-starter-kit', liveLink: ''},
+      {id: 3, name: 'Intention Timer', description: '', preview: 'https://gyazo.com/4ac2f63409912af74182a42666e00189.png', githubLink: 'https://github.com/josharagon/intention-timer', liveLink: 'https://aemiers.github.io/intention-timer/'},
+      {id: 4, name: 'Tic Tac Toe', description: '', preview: 'https://gyazo.com/4ac2f63409912af74182a42666e00189.png', githubLink: 'https://github.com/josharagon/Tic-Tac-Toe', liveLink: 'https://josharagon.github.io/Tic-Tac-Toe/'},
+      {id: 5, name: 'Self Care Center', description: '', preview: 'https://user-images.githubusercontent.com/49926352/96159974-93c4c780-0ed2-11eb-9009-68501c2b5bd7.png', githubLink: ' https://github.com/josharagon/self-care-center/', liveLink: ' https://josharagon.github.io/self-care-center/'},
+      {id: 6, name: 'Slap Jack', description: '', preview: 'https://gyazo.com/8d888576b91fe60b66f2011aa724db6f.png', githubLink: 'https://github.com/josharagon/SlapJack', liveLink: 'https://josharagon.github.io/SlapJack/'}
       ],
       isDarkMode: false,
       theme: 'light'

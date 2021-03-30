@@ -12,7 +12,8 @@ const Card = ({name, description, preview, githubLink, liveLink}) => {
                 <img className='preview-image' src={preview}></img>
                 <div className='card-footer'>
                 <a href={githubLink} target="_blank">github link</a>
-                <a href={liveLink}>view live</a>
+                {liveLink &&
+                <a href={liveLink} target="_blank">view live</a> }
                 </div>
             </article>
         )
