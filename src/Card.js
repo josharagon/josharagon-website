@@ -3,32 +3,19 @@ import React, { Component } from 'react'
 import './Card.scss'
 
 
-class Card extends Component {
-    constructor() {
-        super();
-        this.state = {
-            name: '',
-            description: '',
-            preview: '',
-        }
-    }
+const Card = ({name, description, preview, githubLink, liveLink}) => {
 
-
-
-
-    render() {
         return (
             <article className='project-cards'>
-                <h2>name</h2>
-                <p>description</p>
-                <img className='preview-imagegit ' src={'https://user-images.githubusercontent.com/72054706/109868661-27e6bf80-7c25-11eb-90a7-eab43cfddc43.png'}></img>
+                <h2>{name}</h2>
+                <p>{description}</p>
+                <img className='preview-image' src={preview}></img>
                 <div className='card-footer'>
-                <a>github link</a>
-                <a>view live</a>
+                <a href={githubLink} target="_blank">github link</a>
+                <a href={liveLink}>view live</a>
                 </div>
             </article>
         )
-    }
 }
 
 
