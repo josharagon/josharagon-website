@@ -10,6 +10,7 @@ import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./globalStyles.js";
 import { lightTheme, darkTheme } from "./Themes.js"
+import { Link, animateScroll as scroll } from 'react-scroll';
 
 class App extends Component {
   constructor() {
@@ -27,9 +28,6 @@ class App extends Component {
     }
   }
 
-
-  // const[isDarkMode, setDarkMode] = useState(false);
-  // const[theme, setTheme] = useState('light');
   themeToggler = () => {
     this.state.theme === 'light' ? this.setState({ theme: 'dark' }) : this.setState({ theme: 'light' })
     this.toggleDarkMode(this.state.theme === 'light' ? (true) : (false))
@@ -58,9 +56,36 @@ class App extends Component {
           <nav className='nav-bar'>
             <a href=''>Josh Aragon</a>
             <div className='nav-links'>
-              <a href='#aboutMe'>about me</a>
-              <a href='#myWork'>my work</a>
-              <a href='#contactForm'>contact Me</a>
+              <Link
+                activeClass="active"
+                to="about"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={800}
+              >
+                <a>about me</a>
+              </Link>
+              <Link
+                activeClass="active"
+                to="projects"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
+                <a>my work</a>
+              </Link>
+              <Link
+                activeClass="active"
+                to="about"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={500}
+              >
+                <a>contact me</a>
+              </Link>
               <DarkModeSwitch
                 style={{ marginBottom: '.35rem' }}
                 checked={this.state.isDarkMode}
@@ -77,11 +102,11 @@ class App extends Component {
             </div>
             <img src={me} className='me-image' height='500px'></img>
           </section>
-          <section className='my-work'>
+          <section className='my-work' id='projects'>
             <h1>my projects</h1>
             <ProjectContainer projects={this.state.projects} />
           </section>
-          <section className='about-me'>
+          <section className='about-me' id="about">
             <h1> about me </h1>
             <div className='tools-about'>
               {this.renderToolImg()}
