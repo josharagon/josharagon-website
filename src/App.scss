@@ -79,3 +79,17 @@ body {
     padding-top: 100px;
     text-align: center;
 }
+
+.my-toolbox {
+    height: 400px;
+    box-shadow: #00000069 0px 1px 6px 0px;
+    border-radius: 25px;
+}
+
+.tools-about {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}

@@ -1,5 +1,7 @@
 import './App.scss';
 import me from './img/me.png'
+import toolsLight from './img/toolsLight.png'
+import toolsDark from './img/toolsDark.png'
 import * as React from 'react';
 import { Component } from 'react'
 import Card from './Card.js'
@@ -36,6 +38,18 @@ class App extends Component {
     this.setState({ isDarkMode: checked });
   };
 
+  renderToolImg = () => {
+    if (this.state.theme === 'light') {
+      return (
+        <img src={toolsLight} className='my-toolbox'></img>
+      )
+    } else {
+      return (
+        <img src={toolsDark} className='my-toolbox'></img>
+      )
+    }
+  }
+
   render() {
     return (
       <ThemeProvider theme={this.state.theme === 'light' ? lightTheme : darkTheme}>
@@ -69,8 +83,8 @@ class App extends Component {
           </section>
           <section className='about-me'>
             <h1> about me </h1>
-            <div>
-              <src></src>
+            <div className='tools-about'>
+              {this.renderToolImg()}
               <p> 19 year old software developer currently attending Turing School of Software & Design, and will be graduating at the end of May, 2021. Dedicated to improving skills through hands-on learning and development work. Well-organized and collaborative team player with strong communication and analytical abilities. Knowledgeable in multiple development languages with the intent and ability to quickly master many more</p>
             </div>
           </section>
