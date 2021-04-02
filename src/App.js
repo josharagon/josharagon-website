@@ -54,7 +54,7 @@ class App extends Component {
         <>
           <GlobalStyles />
           <nav className='nav-bar'>
-            <a href=''>Josh Aragon</a>
+            <a>Josh Aragon</a>
             <div className='nav-links'>
               <Link
                 activeClass="active"
@@ -98,7 +98,7 @@ class App extends Component {
             <div className='hello-me'>
               <h1>hello!</h1>
               <h2>I'm Josh, a software developer in Brighton, CO</h2>
-              <a className='work-with-me' href='#contactForm'> Work With Me</a>
+              <a className='work-with-me'> Work With Me</a>
             </div>
             <img src={me} className='me-image' height='500px'></img>
           </section>
@@ -107,10 +107,12 @@ class App extends Component {
             <ProjectContainer projects={this.state.projects} />
           </section>
           <section className='about-me' id="about">
-            <h1> about me </h1>
             <div className='tools-about'>
               {this.renderToolImg()}
-              <p> 19 year old software developer currently attending Turing School of Software & Design, and will be graduating at the end of May, 2021. Dedicated to improving skills through hands-on learning and development work. Well-organized and collaborative team player with strong communication and analytical abilities. Knowledgeable in multiple development languages with the intent and ability to quickly master many more</p>
+              <div className='more-about'>
+                <h1>more about me</h1>
+                <p> 19 year old software developer currently attending Turing School of Software & Design, and will be graduating at the end of May, 2021. Dedicated to improving skills through hands-on learning and development work. Well-organized and collaborative team player with strong communication and analytical abilities. Knowledgeable in multiple development languages with the intent and ability to quickly master many more</p>
+              </div>
             </div>
           </section>
         </>
