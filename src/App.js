@@ -2,6 +2,11 @@ import './App.scss';
 import me from './img/me.png'
 import toolsLight from './img/toolsLight.png'
 import toolsDark from './img/toolsDark.png'
+import github from './img/github.png'
+import instagram from './img/instagram.png'
+import linkedin from './img/linkedin.png'
+import twitter from './img/twitter.png'
+import youtube from './img/youtube.png'
 import * as React from 'react';
 import { Component } from 'react'
 import Card from './Card.js'
@@ -112,6 +117,13 @@ class App extends Component {
               <div className='more-about'>
                 <h1>more about me</h1>
                 <p> 19 year old software developer currently attending Turing School of Software & Design, and will be graduating at the end of May, 2021. Dedicated to improving skills through hands-on learning and development work. Well-organized and collaborative team player with strong communication and analytical abilities. Knowledgeable in multiple development languages with the intent and ability to quickly master many more</p>
+                <div className='social-links'>
+                  <a href='https://www.github.com/josharagon' target="_blank"><img src={github} className='social-logo' alt='my github'></img></a>
+                  <a href='https://www.linkedin.com/in/joshua-aragon-854275206/' target="_blank"><img src={linkedin} className='social-logo' alt='my linkedin'></img></a>
+                  <a href='https://www.twitter.com/aragondev' target="_blank"><img src={twitter} className='social-logo' alt='my twitter'></img></a>
+                  <a href='https://www.instagram.com/joshjaragon' target="_blank"><img src={instagram} className='social-logo' alt='my instagram'></img></a>
+                  <a href='https://www.youtube.com/channel/UCmZMN0KRFaMr86GeBEoNZIA' target="_blank"><img src={youtube} className='social-logo' alt='my youtube channel'></img></a>
+                </div>
               </div>
             </div>
           </section>
