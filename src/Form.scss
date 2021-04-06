@@ -1,8 +1,10 @@
 .my-form{
     padding: 4rem 0px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     text-align: center;
+    align-items: center;
 }
 
 .contact-form {
@@ -18,4 +20,13 @@
     border-radius: 7px;
     margin-bottom: 0.5rem;
     transition: all 0.3s ease 0s;
+}
+
+.btn {
+    background-color: #1351d8;
+    width: 150px;
+    color: white;
+    text-align: center;
+    padding: 10px 0px 10px 0px;
+    border-radius: 5px;
 }

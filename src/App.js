@@ -83,7 +83,7 @@ class App extends Component {
               </Link>
               <Link
                 activeClass="active"
-                to="about"
+                to="contact"
                 spy={true}
                 smooth={true}
                 offset={-70}

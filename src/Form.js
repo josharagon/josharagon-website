@@ -51,7 +51,8 @@ class Form extends Component {
 
     render() {
         return(
-          <div className="my-form">
+          <div className="my-form" id='contact'>
+            <h1>contact me</h1>
             <form className='contact-form' id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
               <div className="form-group">
                 <input type="text" className="input-bars" placeholder='Name' value={this.state.name} onChange={this.onNameChange.bind(this)} />
