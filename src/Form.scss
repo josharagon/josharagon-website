@@ -20,6 +20,8 @@
     border-radius: 7px;
     margin-bottom: 0.5rem;
     transition: all 0.3s ease 0s;
+    background-color: transparent;
+    color: unset;
 }
 
 .btn {
@@ -29,4 +31,8 @@
     text-align: center;
     padding: 10px 0px 10px 0px;
     border-radius: 5px;
+}
+
+::placeholder {
+    color: unset;
 }
