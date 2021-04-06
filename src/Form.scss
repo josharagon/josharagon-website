@@ -1,0 +1,21 @@
+.my-form{
+    padding: 4rem 0px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.contact-form {
+    width: 70%;
+    padding-right: 2rem;
+}
+
+.input-bars {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #1351d8;
+    padding: 0.8rem 1rem;
+    border-radius: 7px;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease 0s;
+}

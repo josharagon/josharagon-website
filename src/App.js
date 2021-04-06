@@ -9,7 +9,7 @@ import twitter from './img/twitter.png'
 import youtube from './img/youtube.png'
 import * as React from 'react';
 import { Component } from 'react'
-import Card from './Card.js'
+import Form from './Form.js'
 import ProjectContainer from './Projects.js'
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import { ThemeProvider } from "styled-components";
@@ -115,8 +115,8 @@ class App extends Component {
             <div className='tools-about'>
               {this.renderToolImg()}
               <div className='more-about'>
-                <h1>more about me</h1>
-                <p> 19 year old software developer currently attending Turing School of Software & Design, and will be graduating at the end of May, 2021. Dedicated to improving skills through hands-on learning and development work. Well-organized and collaborative team player with strong communication and analytical abilities. Knowledgeable in multiple development languages with the intent and ability to quickly master many more</p>
+                <h1 className='summary-head'>more about me</h1>
+                <p className='my-summary'> 19 year old software developer currently attending Turing School of Software & Design. Strong passion for learning. Currently learning React. I found coding my freshman year of highschool and feel in love. Outside of coding my main passion is automobiles. I love going to the meets on the weekend with my brother and some friends. My current goal is to get an Audi RS3.</p>
                 <div className='social-links'>
                   <a href='https://www.github.com/josharagon' target="_blank"><img src={github} className='social-logo' alt='my github'></img></a>
                   <a href='https://www.linkedin.com/in/joshua-aragon-854275206/' target="_blank"><img src={linkedin} className='social-logo' alt='my linkedin'></img></a>
@@ -127,6 +127,7 @@ class App extends Component {
               </div>
             </div>
           </section>
+          < Form/>
         </>
       </ThemeProvider >
     );
