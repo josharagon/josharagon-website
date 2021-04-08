@@ -116,7 +116,7 @@ class App extends Component {
               {this.renderToolImg()}
               <div className='more-about'>
                 <h1 className='summary-head'>more about me</h1>
-                <p className='my-summary'> 19 year old software developer currently attending Turing School of Software & Design. Strong passion for learning. Currently learning React. I found coding my freshman year of highschool and feel in love. Outside of coding my main passion is automobiles. I love going to the meets on the weekend with my brother and some friends. My current goal is to get an Audi RS3.</p>
+                <p className='my-summary'> 19 year old software developer currently attending Turing School of Software & Design. Strong passion for learning. Currently learning React. I found coding my freshman year of highschool and fell in love. Outside of coding my main passion is automobiles. I love going to the meets on the weekend with my brother and some friends. My current goal is to get an Audi RS3.</p>
                 <div className='social-links'>
                   <a href='https://www.github.com/josharagon' target="_blank"><img src={github} className='social-logo' alt='my github'></img></a>
                   <a href='https://www.linkedin.com/in/joshua-aragon-854275206/' target="_blank"><img src={linkedin} className='social-logo' alt='my linkedin'></img></a>
