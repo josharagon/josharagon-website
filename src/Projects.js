@@ -2,7 +2,6 @@ import Card from './Card.js'
 
 
 const ProjectContainer = ({ projects }) => {
-    console.log(projects)
     const projectCards = projects.map(project => {
         return (
             <Card
