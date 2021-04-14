@@ -29,7 +29,7 @@ class App extends Component {
       { id: 6, name: 'Slap Jack', description: '', preview: 'https://gyazo.com/8d888576b91fe60b66f2011aa724db6f.png', githubLink: 'https://github.com/josharagon/SlapJack', liveLink: 'https://josharagon.github.io/SlapJack/' }
       ],
       isDarkMode: false,
-      theme: 'light'
+      theme: 'light',
     }
   }
 
