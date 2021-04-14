@@ -13,8 +13,7 @@
     "react-scroll": "^1.8.2",
     "react-spring": "^9.0.0",
     "react-toggle-dark-mode": "^1.0.3",
-    "styled-components": "^5.2.1",
-    "web-vitals": "^1.1.1"
+    "styled-components": "^5.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -39,5 +38,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "web-vitals": "^1.1.1"
   }
 }
