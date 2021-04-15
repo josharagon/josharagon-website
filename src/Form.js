@@ -30,7 +30,7 @@ class Form extends Component {
       handleSubmit(event) {
         event.preventDefault();
 
-        fetch('http://localhost:3002/send', {
+        fetch('http://localhost:3002', {
             method: "POST",
             body: JSON.stringify(this.state),
             headers: {
