@@ -18,13 +18,10 @@ function Form() {
 
   return (
     <form className="contact-form" onSubmit={sendEmail}>
-      <input type="hidden" name="contact_number" />
-      <label>Name</label>
-      <input type="text" name="user_name" />
-      <label>Email</label>
-      <input type="email" name="user_email" />
-      <label>Message</label>
-      <textarea name="message" />
+      <input type="hidden" name="contact_number"/>
+      <input type="text" name="user_name" placeholder='Name*'/>
+      <input type="email" name="user_email" placeholder='Email*'/>
+      <textarea name="message" placeholder='Message*'/>
       <button type="submit" value="Send">Send</button>
     </form>
   );
