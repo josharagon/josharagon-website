@@ -1,79 +1,33 @@
-import React, { Component } from 'react'
-import './Form.scss'
+import React from 'react';
+import emailjs from 'emailjs-com';
 
-class Form extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: '',
-            email: '',
-            message: ''
-        }
-    }
-    
-    handeChange = event => {
-        this.setState({ [event.target.name]: event.target.value});
-    }
+import './Form.scss';
 
-    onNameChange = (event) => {
-        this.setState({name: event.target.value})
-      }
-    
-      onEmailChange = (event) => {
-        this.setState({email: event.target.value})
-      }
-    
-      onMessageChange = (event) => {
-        this.setState({message: event.target.value})
-      }
-    
-      handleSubmit(event) {
-        event.preventDefault();
+function Form() {
 
-        fetch('http://localhost:3002', {
-            method: "POST",
-            body: JSON.stringify(this.state),
-            headers: {
-              'Accept': 'application/json',
-              'Content-Type': 'application/json'
-            },
-          }).then(
-          (response) => (response.json())
-            ).then((response)=> {
-          if (response.status === 'success') {
-            alert("Message Sent."); 
-            this.resetForm()
-          } else if(response.status === 'fail') {
-            alert("Message failed to send.")
-          }
-        })
-      }
+  function sendEmail(e) {
+    e.preventDefault();
 
-      resetForm() {
-        this.setState({name: '', email: '', message: ''})
-      }
+    emailjs.sendForm('service_dz7f6cd', 'template_23tvyob', e.target, 'user_wGMpB8C5I4eMQO2vSS533')
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  }
 
-    render() {
-        return(
-          <div className="my-form" id='contact'>
-            <h1>contact me</h1>
-            <form className='contact-form' id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
-              <div className="form-group">
-                <input type="text" className="input-bars" placeholder='Name' value={this.state.name} onChange={this.onNameChange.bind(this)} />
-              </div>
-              <div className="form-group">
-                <input type="email" className="input-bars" aria-describedby="emailHelp" placeholder='Email' value={this.state.email} onChange={this.onEmailChange.bind(this)} />
-              </div>
-              <div className="form-group">
-                <textarea className="input-bars" rows="5" placeholder='Message' value={this.state.message} onChange={this.onMessageChange.bind(this)} />
-              </div>
-              <button type="submit" className="btn btn-primary">Submit</button>
-            </form>
-          </div>
-        );
-      }
-
+  return (
+    <form className="contact-form" onSubmit={sendEmail}>
+      <input type="hidden" name="contact_number" />
+      <label>Name</label>
+      <input type="text" name="user_name" />
+      <label>Email</label>
+      <input type="email" name="user_email" />
+      <label>Message</label>
+      <textarea name="message" />
+      <input type="submit" value="Send" />
+    </form>
+  );
 }
-
 
 export default Form;
