@@ -1,15 +1,10 @@
-.my-form{
+form{
     padding: 4rem 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
-    align-items: center;
-}
-
-.contact-form {
-    width: 70%;
-    padding-right: 2rem;
+    text-align: left;
+    align-items: flex-start;
 }
 
 input {
@@ -17,20 +12,31 @@ input {
     box-sizing: border-box;
     border: 2px solid #1351d8;
     padding: 0.8rem 1rem;
-    border-radius: 7px;
+    border-radius: 10px;
     margin-bottom: 0.5rem;
     transition: all 0.3s ease 0s;
     background-color: transparent;
     color: unset;
 }
 
-.btn {
+button {
     background-color: #1351d8;
     width: 150px;
     color: white;
     text-align: center;
+    align-self: center;
+    margin: 30px 0px 0px 0px;
     padding: 10px 0px 10px 0px;
     border-radius: 5px;
+}
+
+textarea {
+    background-color: transparent;
+    color: unset;
+    align-self: center;
+    resize: none;
+    width: 75%;
+    height: 100px;
 }
 
 ::placeholder {

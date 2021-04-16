@@ -25,7 +25,7 @@ function Form() {
       <input type="email" name="user_email" />
       <label>Message</label>
       <textarea name="message" />
-      <input type="submit" value="Send" />
+      <button type="submit" value="Send">Send</button>
     </form>
   );
 }
