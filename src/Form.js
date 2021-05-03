@@ -17,7 +17,8 @@ function Form() {
   }
 
   return (
-    <form className="contact-form" onSubmit={sendEmail}>
+    <form className="contact-form" onSubmit={sendEmail}  id='contact'>
+      <h1>Contact Me</h1>
       <input type="hidden" name="contact_number"/>
       <input type="text" name="user_name" placeholder='Name*'/>
       <input type="email" name="user_email" placeholder='Email*'/>
