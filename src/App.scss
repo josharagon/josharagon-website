@@ -140,6 +140,7 @@ body {
     }
 
     .hello-me {
+        text-align: center;
         align-items: center;
         margin-bottom: 35px;
     }
@@ -161,6 +162,10 @@ body {
 
     .social-links {
         align-self: center;
+    }
+    
+    .summary-head {
+        text-align:center;
     }
 
     .my-summary {

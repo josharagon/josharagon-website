@@ -77,7 +77,7 @@ class App extends Component {
                 spy={true}
                 smooth={true}
                 offset={-70}
-                duration={500}
+                duration={800}
               >
                 <a>my work</a>
               </Link>
@@ -87,7 +87,7 @@ class App extends Component {
                 spy={true}
                 smooth={true}
                 offset={-70}
-                duration={500}
+                duration={800}
               >
                 <a>contact me</a>
               </Link>
@@ -103,7 +103,16 @@ class App extends Component {
             <div className='hello-me'>
               <h1>hello!</h1>
               <h2>I'm Josh, a software developer in Brighton, CO</h2>
-              <a className='work-with-me'> Work With Me</a>
+              <Link
+                activeClass="active"
+                to="contact"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={800}
+              >
+                <a className='work-with-me'> Work With Me</a>
+              </Link>
             </div>
             <img src={me} className='me-image' height='500px'></img>
           </section>
