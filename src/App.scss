@@ -129,3 +129,42 @@ body {
 #contact {
     margin-top: 20px;
 }
+
+@media only screen and (max-width: 700px) {
+    body {
+        margin: 0em 1em 0em 1em;
+    }
+    .hello-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hello-me {
+        align-items: center;
+        margin-bottom: 35px;
+    }
+
+    .tools-about {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .my-toolbox {
+        width: 350px;
+        height: 300px;
+    }
+
+    .more-about {
+        margin-top: 40px;
+        width: unset;
+    }
+
+    .social-links {
+        align-self: center;
+    }
+
+    .my-summary {
+        margin:0;
+    }
+
+  }
