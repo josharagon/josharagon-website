@@ -3,12 +3,19 @@ $box-shadow: rgba(0, 0, 0, 11%) 0px 1px 6px 0px;
 .project-cards {
     display: flex;
     flex-direction: column;
-    height: fit-content;
-    width: 250px;
     text-align: left;
     margin: .5em 1em .5em 1em;
     padding: .5em .5em .5em .5em;
     box-shadow: #00000069 0px 1px 6px 0px;
+    width: 90%;
+    height: 90%;
+    justify-content: space-evenly;
+    overflow: hidden;
+}
+
+.preview-image {
+    width: 275px;
+    align-self: center;
 }
 
 .project-cards > h2 {
