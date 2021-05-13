@@ -2,17 +2,23 @@
 * {
     font-family: 'Roboto', sans-serif;
 }
+html {
+    display: flex;
+    place-content: center;
+}
 
 body {
     margin: 0px 5em 0px 5em;
 }
 
+
 .nav-bar {
+    padding: 1.5rem 0px;
     display: flex;
-    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
     justify-content: space-between;
-    padding: 1.5em 0em 1.5em 0em;
-    align-items: center
 }
 
 .nav-links {
@@ -131,6 +137,12 @@ body {
     margin-top: 20px;
 }
 
+@media only screen and (max-width: 960px) {
+    .my-project-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media only screen and (max-width: 700px) {
     body {
         margin: 0em 1em 0em 1em;
@@ -171,6 +183,10 @@ body {
 
     .my-summary {
         margin:0;
+    }
+
+    .my-project-container {
+        grid-template-columns: 1fr;
     }
 
   }
