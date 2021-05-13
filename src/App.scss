@@ -73,11 +73,12 @@ body {
 }
 
 .my-project-container {
-    display: flex;
-    width: 100%;
-    align-content: flex-start;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    -webkit-box-align: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 8fr;
+    gap: 1.2rem;
 }
 
 .about-me{ 
