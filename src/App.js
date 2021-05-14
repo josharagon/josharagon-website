@@ -15,16 +15,16 @@ import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./globalStyles.js";
 import { lightTheme, darkTheme } from "./Themes.js"
-import { Link, animateScroll as scroll } from 'react-scroll';
+import { Link} from 'react-scroll';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      projects: [{ id: 1, name: 'FitLit Fitness Tracker', description: '', preview: 'https://user-images.githubusercontent.com/72054706/109868661-27e6bf80-7c25-11eb-90a7-eab43cfddc43.png', githubLink: 'https://github.com/josharagon/FitLit-Activity-Tracker', liveLink: '' },
-      { id: 2, name: 'What\'s Cookin\' Recipe Site', description: '', preview: 'https://github.com/josharagon/whats-cookin-starter-kit/raw/main/src/images/homeScreen.png', githubLink: 'https://github.com/josharagon/whats-cookin-starter-kit', liveLink: '' },
-      { id: 3, name: 'Intention Timer', description: '', preview: 'https://gyazo.com/4288834067944e522ba4c0535f9d24b1.png', githubLink: 'https://github.com/josharagon/intention-timer', liveLink: 'https://aemiers.github.io/intention-timer/' },
-      { id: 4, name: 'Tic Tac Toe', description: '', preview: '', githubLink: 'https://github.com/josharagon/Tic-Tac-Toe', liveLink: 'https://josharagon.github.io/Tic-Tac-Toe/' },
+      projects: [{ id: 1, name: 'FitLit Fitness Tracker', description: 'A brownfield project', preview: 'https://user-images.githubusercontent.com/72054706/109868661-27e6bf80-7c25-11eb-90a7-eab43cfddc43.png', githubLink: 'https://github.com/josharagon/FitLit-Activity-Tracker', liveLink: '' },
+      { id: 2, name: 'What\'s Cookin\' Recipe Site', description: 'What\'s Cookin\' is a recipe website created with a focus on Test Driven Design, multi-class integration, wireframing, and responsive layout', preview: 'https://github.com/josharagon/whats-cookin-starter-kit/raw/main/src/images/homeScreen.png', githubLink: 'https://github.com/josharagon/whats-cookin-starter-kit', liveLink: '' },
+      { id: 3, name: 'Intention Timer', description: 'Intention-timer is a program that allows a user to time and keep track of productive tasks.', preview: 'https://gyazo.com/4288834067944e522ba4c0535f9d24b1.png', githubLink: 'https://github.com/josharagon/intention-timer', liveLink: 'https://aemiers.github.io/intention-timer/' },
+      { id: 4, name: 'Pear', description: 'A community driven application where senior devs can offer a helping hand for review requests.', preview: 'https://camo.githubusercontent.com/95a738dc2f4dd094ec98c18bc08176d8cfe8337437e054d3edc3bf677521874f/68747470733a2f2f6779617a6f2e636f6d2f30313864313961636630633638356537663564376133623030306335353562642e706e67', githubLink: 'https://github.com/josharagon/stretch-project', liveLink: '' },
       { id: 5, name: 'Self Care Center', description: '', preview: 'https://user-images.githubusercontent.com/49926352/96159974-93c4c780-0ed2-11eb-9009-68501c2b5bd7.png', githubLink: ' https://github.com/josharagon/self-care-center/', liveLink: ' https://josharagon.github.io/self-care-center/' },
       { id: 6, name: 'Slap Jack', description: '', preview: 'https://gyazo.com/8d888576b91fe60b66f2011aa724db6f.png', githubLink: 'https://github.com/josharagon/SlapJack', liveLink: 'https://josharagon.github.io/SlapJack/' }
       ],
@@ -44,11 +44,11 @@ class App extends Component {
   renderToolImg = () => {
     if (this.state.theme === 'light') {
       return (
-        <img src={toolsLight} className='my-toolbox'></img>
+        <img src={toolsLight} className='my-toolbox' alt='toolbox light'></img>
       )
     } else {
       return (
-        <img src={toolsDark} className='my-toolbox'></img>
+        <img src={toolsDark} className='my-toolbox' alt='toolbox dark'></img>
       )
     }
   }
@@ -59,7 +59,7 @@ class App extends Component {
         <>
           <GlobalStyles />
           <nav className='nav-bar'>
-            <a>Josh Aragon</a>
+            <p>Josh Aragon</p>
             <div className='nav-links'>
               <Link
                 activeClass="active"
@@ -69,7 +69,7 @@ class App extends Component {
                 offset={-70}
                 duration={800}
               >
-                <a>about me</a>
+                <p>about me</p>
               </Link>
               <Link
                 activeClass="active"
@@ -79,7 +79,7 @@ class App extends Component {
                 offset={-70}
                 duration={800}
               >
-                <a>my work</a>
+                <p>my work</p>
               </Link>
               <Link
                 activeClass="active"
@@ -89,7 +89,7 @@ class App extends Component {
                 offset={-70}
                 duration={800}
               >
-                <a>contact me</a>
+                <p>contact me</p>
               </Link>
               <DarkModeSwitch
                 style={{ marginBottom: '.35rem' }}
@@ -111,10 +111,10 @@ class App extends Component {
                 offset={-70}
                 duration={800}
               >
-                <a className='work-with-me'> Work With Me</a>
+                <p className='work-with-me'> Work With Me</p>
               </Link>
             </div>
-            <img src={me} className='me-image' height='500px'></img>
+            <img src={me} className='me-image' height='500px' alt='me'></img>
           </section>
           <section className='my-work' id='projects'>
             <h1>my projects</h1>
@@ -131,11 +131,11 @@ class App extends Component {
                 I love going to the meets on the weekend with my brother and some friends.
                 </p>
                 <div className='social-links'>
-                  <a href='https://www.github.com/josharagon' target="_blank"><img src={github} className='social-logo' alt='my github'></img></a>
-                  <a href='https://www.linkedin.com/in/joshua-aragon-854275206/' target="_blank"><img src={linkedin} className='social-logo' alt='my linkedin'></img></a>
-                  <a href='https://www.twitter.com/aragondev' target="_blank"><img src={twitter} className='social-logo' alt='my twitter'></img></a>
-                  <a href='https://www.instagram.com/joshjaragon' target="_blank"><img src={instagram} className='social-logo' alt='my instagram'></img></a>
-                  <a href='https://www.youtube.com/channel/UCmZMN0KRFaMr86GeBEoNZIA' target="_blank"><img src={youtube} className='social-logo' alt='my youtube channel'></img></a>
+                  <a href='https://www.github.com/josharagon' target="_blank" rel="noreferrer" ><img src={github} className='social-logo' alt='my github'></img></a>
+                  <a href='https://www.linkedin.com/in/joshua-aragon-854275206/' target="_blank" rel="noreferrer"><img src={linkedin} className='social-logo' alt='my linkedin'></img></a>
+                  <a href='https://www.twitter.com/aragondev' target="_blank" rel="noreferrer" ><img src={twitter} className='social-logo' alt='my twitter'></img></a>
+                  <a href='https://www.instagram.com/joshjaragon' target="_blank" rel="noreferrer" ><img src={instagram} className='social-logo' alt='my instagram'></img></a>
+                  <a href='https://www.youtube.com/channel/UCmZMN0KRFaMr86GeBEoNZIA' target="_blank" rel="noreferrer"><img src={youtube} className='social-logo' alt='my youtube channel'></img></a>
                 </div>
               </div>
             </div>

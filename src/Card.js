@@ -1,5 +1,4 @@
-import { render } from '@testing-library/react';
-import React, { Component } from 'react'
+import React from 'react'
 import './Card.scss'
 
 
@@ -9,11 +8,11 @@ const Card = ({name, description, preview, githubLink, liveLink}) => {
             <article className='project-cards'>
                 <h2>{name}</h2>
                 <p>{description}</p>
-                <img className='preview-image' src={preview}></img>
+                <img className='preview-image' src={preview} alt={`${name} preview`}></img>
                 <div className='card-footer'>
-                <a href={githubLink} target="_blank">github link</a>
+                <a href={githubLink} target="_blank" rel="noreferrer">github link</a>
                 {liveLink &&
-                <a href={liveLink} target="_blank">view live</a> }
+                <a href={liveLink} target="_blank" rel="noreferrer">view live</a> }
                 </div>
             </article>
         )
