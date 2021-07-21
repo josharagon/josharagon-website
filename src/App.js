@@ -40,7 +40,8 @@ class App extends Component {
           preview:
             "https://github.com/josharagon/whats-cookin-starter-kit/raw/main/src/images/homeScreen.png",
           githubLink: "https://github.com/josharagon/whats-cookin-starter-kit",
-          liveLink: "",
+          liveLink:
+            "https://connorandersonlarson.github.io/whats-cookin-starter-kit/src/index.html",
         },
         {
           id: 3,
