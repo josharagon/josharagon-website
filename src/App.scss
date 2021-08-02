@@ -1,195 +1,193 @@
-
 * {
-    font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 html {
-    display: flex;
-    place-content: center;
+  display: flex;
+  place-content: center;
 }
 
 body {
-    margin: 0px 5em 0px 5em;
+  margin: 0px 5em 0px 5em;
 }
 
-
 .nav-bar {
-    padding: 1.5rem 0px;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
+  padding: 1.5rem 0px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
 }
 
 .nav-links {
-    @extend.nav-bar;
+  @extend.nav-bar;
 }
 
- a {
-    cursor: pointer;
-    margin-right: 1em;
-    color: inherit;
-    text-decoration:none;
+a {
+  cursor: pointer;
+  margin-right: 1em;
+  color: inherit;
+  text-decoration: none;
 }
 
-.theme-logo{
-    background: none;
-    border: none;
-    cursor: pointer;
-    transition: 5s ease-in-out;
-    outline:0;
+.theme-logo {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: 5s ease-in-out;
+  outline: 0;
 }
 
 .hello-container {
-    padding-top: 100px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .hello-me {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .work-with-me {
-    background-color:#1351d8;
-    width: 150px;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    border-radius: 5px;
+  background-color: #1351d8;
+  width: 150px;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 #myMask2 > circle {
-    cy:2px !important;
+  cy: 2px !important;
 }
 
 .me-image {
-    -webkit-user-drag: none;
+  -webkit-user-drag: none;
 }
 .my-work {
-    padding-top: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .my-project-container {
-    display: grid;
-    -webkit-box-align: center;
-    align-items: center;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 8fr;
-    gap: 1.2rem;
+  display: grid;
+  -webkit-box-align: center;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 8fr;
+  gap: 1.2rem;
 }
 
-.about-me{ 
-    padding-top: 100px;
-    text-align: center;
+.about-me {
+  padding-top: 100px;
+  text-align: center;
 }
 
 .my-toolbox {
-    height: 400px;
-    box-shadow: #00000069 0px 1px 6px 0px;
-    border-radius: 25px;
+  height: 400px;
+  box-shadow: #00000069 0px 1px 6px 0px;
+  border-radius: 25px;
 }
 
 .tools-about {
-    padding-top: 20px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
 }
 .more-about {
-    display: flex;
-    flex-direction:column;
-    width: 40%;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
 }
 
 .social-links {
-    padding-top: 20px;
-    display: flex;
-    flex-direction: row;
-    align-self: left;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-self: left;
 }
 
 .summary-head {
-    font-size: 30px;
-    text-align: left;
+  font-size: 30px;
+  text-align: left;
 }
 
 .my-summary {
-    font-size: 25px;
-    text-align: left;
+  font-size: 25px;
+  text-align: left;
+  margin: 0;
 }
 
 .social-logo {
-    height: 40px;
-    padding-left: 5px;
+  height: 40px;
+  padding-left: 5px;
 }
 
 #contact {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 @media only screen and (max-width: 960px) {
-    .my-project-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .my-project-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media only screen and (max-width: 850px) {
-    body {
-        margin: 0em 1em 0em 1em;
-    }
-    .hello-container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .hello-me {
-        text-align: center;
-        align-items: center;
-        margin-bottom: 35px;
-    }
-
-    .my-toolbox {
-        width: 350px;
-        height: 300px;
-    }
-
-    .more-about {
-        margin-top: 40px;
-        width: unset;
-    }
-
-    .social-links {
-        align-self: center;
-    }
-    
-    .summary-head {
-        text-align:center;
-    }
-
-    .my-summary {
-        margin:0;
-    }
-
-    .my-project-container {
-        grid-template-columns: 1fr;
-    }
-
+  body {
+    margin: 0em 1em 0em 1em;
+  }
+  .hello-container {
+    display: flex;
+    flex-direction: column;
   }
 
-
-  @media only screen and (max-width: 1250px) {
-    .tools-about {
-        display: flex;
-        flex-direction: column;
-    }
+  .hello-me {
+    text-align: center;
+    align-items: center;
+    margin-bottom: 35px;
   }
+
+  .my-toolbox {
+    width: 350px;
+    height: 300px;
+  }
+
+  .more-about {
+    margin-top: 40px;
+    width: unset;
+  }
+
+  .social-links {
+    align-self: center;
+  }
+
+  .summary-head {
+    text-align: center;
+  }
+
+  .my-summary {
+    margin: 0;
+  }
+
+  .my-project-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 1250px) {
+  .tools-about {
+    display: flex;
+    flex-direction: column;
+  }
+}
