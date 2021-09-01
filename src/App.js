@@ -12,6 +12,7 @@ import * as React from "react";
 import { Component } from "react";
 import Form from "./Form.js";
 import ProjectContainer from "./Projects.js";
+import Carousel from "./Carousel.js";
 import { DarkModeSwitch } from "react-toggle-dark-mode";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./globalStyles.js";
@@ -174,6 +175,12 @@ class App extends Component {
           <section className="my-work" id="projects">
             <h1>my projects</h1>
             <ProjectContainer projects={this.state.projects} />
+          </section>
+          <section className="my-work" id="projects">
+            <h1>my design gallery</h1>
+            <div className="carousel-holder">
+              <Carousel />
+            </div>
           </section>
           <section className="about-me" id="about">
             <div className="tools-about">
