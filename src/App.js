@@ -8,6 +8,7 @@ import linkedin from "./img/linkedin.png";
 import twitter from "./img/twitter.png";
 import youtube from "./img/youtube.png";
 import airagon from "./img/airagon.png";
+import fightImg from "./img/fighttm.jpeg";
 import * as React from "react";
 import { Component } from "react";
 import Form from "./Form.js";
@@ -73,11 +74,11 @@ class App extends Component {
         },
         {
           id: 6,
-          name: "Slap Jack",
+          name: "Fight™",
           description: "",
-          preview: "https://gyazo.com/8d888576b91fe60b66f2011aa724db6f.png",
-          githubLink: "https://github.com/josharagon/SlapJack",
-          liveLink: "https://josharagon.github.io/SlapJack/",
+          preview: fightImg,
+          githubLink: "",
+          liveLink: "https://fighttm.com/",
         },
       ],
       isDarkMode: false,

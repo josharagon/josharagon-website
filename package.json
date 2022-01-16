@@ -15,7 +15,8 @@
     "react-spring": "^9.0.0",
     "react-toggle-dark-mode": "^1.0.3",
     "sass": "^1.48.0",
-    "styled-components": "^5.2.1"
+    "styled-components": "^5.2.1",
+    "swiper": "^6.0.2"
   },
   "scripts": {
     "start": "react-scripts start",
