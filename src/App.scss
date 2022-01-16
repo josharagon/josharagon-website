@@ -188,6 +188,10 @@ a {
   .my-project-container {
     grid-template-columns: 1fr;
   }
+  .carousel-holder {
+    width: 80%;
+    height: 35%;
+  }
 }
 
 @media only screen and (max-width: 1250px) {

@@ -75,7 +75,8 @@ class App extends Component {
         {
           id: 6,
           name: "Fight™",
-          description: "",
+          description:
+            "Innovative gaming software. Fight provides world class analytics, clip recording, social media, cloud data, and match systems.",
           preview: fightImg,
           githubLink: "",
           liveLink: "https://fighttm.com/",
