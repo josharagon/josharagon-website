@@ -91,7 +91,7 @@ class App extends Component {
       : this.setState({ theme: "light" });
     this.toggleDarkMode(this.state.theme === "light" ? true : false);
   };
-  toggleDarkMode = (checked: boolean) => {
+  toggleDarkMode = (checked) => {
     this.setState({ isDarkMode: checked });
   };
 
