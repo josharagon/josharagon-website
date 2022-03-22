@@ -9,6 +9,7 @@ import twitter from "./img/twitter.png";
 import youtube from "./img/youtube.png";
 import airagon from "./img/airagon.png";
 import fightImg from "./img/fighttm.jpeg";
+import carMeetApp from "./img/car-meet-app.png";
 import * as React from "react";
 import { Component } from "react";
 import Form from "./Form.js";
@@ -27,12 +28,12 @@ class App extends Component {
       projects: [
         {
           id: 1,
-          name: "FitLit Fitness Tracker",
-          description: "A brownfield project",
+          name: "TikTok Clone",
+          description: "Simple TikTok clone built with ReactJS",
           preview:
-            "https://user-images.githubusercontent.com/72054706/109868661-27e6bf80-7c25-11eb-90a7-eab43cfddc43.png",
-          githubLink: "https://github.com/josharagon/FitLit-Activity-Tracker",
-          liveLink: "",
+            "https://i.gyazo.com/75730405ab543b1ebc1604e7c8f41dc2.png",
+          githubLink: "https://github.com/josharagon/tiktok-clone/tree/main",
+          liveLink: "https://main.d3f3nok113rcmg.amplifyapp.com/",
         },
         {
           id: 2,
@@ -47,12 +48,12 @@ class App extends Component {
         },
         {
           id: 3,
-          name: "Intention Timer",
+          name: "UndrGround (car-meet-app)",
           description:
-            "Intention-timer is a program that allows a user to time and keep track of productive tasks.",
-          preview: "https://gyazo.com/4288834067944e522ba4c0535f9d24b1.png",
-          githubLink: "https://github.com/josharagon/intention-timer",
-          liveLink: "https://aemiers.github.io/intention-timer/",
+            "My largest project yet. Built with Expo, Firebase, and React Native. A car meet app for car enthusiasts. Currently in development.",
+          preview: 'https://user-images.githubusercontent.com/69175998/159408917-9244cc8b-9718-468c-ba38-94b19fad2993.png',
+          githubLink: "https://github.com/josharagon/car-meet-app",
+          liveLink: "",
         },
         {
           id: 4,
@@ -77,7 +78,7 @@ class App extends Component {
           name: "Fight™",
           description:
             "Innovative gaming software. Fight provides world class analytics, clip recording, social media, cloud data, and match systems.",
-          preview: fightImg,
+          preview: 'https://user-images.githubusercontent.com/69175998/159409180-f10ac60a-e6b3-49a0-a267-41c211e77ec1.jpg',
           githubLink: "",
           liveLink: "https://fighttm.com/",
         },
