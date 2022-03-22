@@ -142,6 +142,18 @@ a {
   height: 35%;
 }
 
+
+.link-site {
+  font-size: small;
+  transition: text-decoration 5s ease;
+  -webkit-transition: 0.5s ease;
+
+
+  &.active {
+    text-decoration: underline;
+  }
+}
+
 @media only screen and (max-width: 960px) {
   .my-project-container {
     grid-template-columns: repeat(2, 1fr);

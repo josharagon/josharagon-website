@@ -85,6 +85,7 @@ class App extends Component {
       ],
       isDarkMode: false,
       theme: "light",
+      activeTab: "software"
     };
   }
 
@@ -118,7 +119,13 @@ class App extends Component {
         <>
           <GlobalStyles />
           <nav className="nav-bar">
-            <p>Josh Aragon</p>
+            <div className="nav-bar-container">
+              <p>Josh Aragon</p>
+              <div className="nav-bar-links">
+                <a className={`link-site ${this.state.activeTab === 'software' ? 'active' : null}`}  onClick={() =>this.setState({ activeTab: "software" })}>Software Development</a>
+                <a className={`link-site ${this.state.activeTab === 'photo' ? 'active' : null}`} onClick={() =>this.setState({ activeTab: "photo" })}>Photography</a>
+                </div>
+            </div>
             <div className="nav-links">
               <Link
                 activeClass="active"
@@ -158,6 +165,7 @@ class App extends Component {
               />
             </div>
           </nav>
+        {this.state.activeTab === 'software' && <div>
           <section className="hello-container">
             <div className="hello-me">
               <h1>hello!</h1>
@@ -259,6 +267,111 @@ class App extends Component {
             </div>
           </section>
           <Form />
+        </div>}
+
+        {this.state.activeTab === 'photo' && <div>
+          <section className="hello-container">
+            <div className="hello-me">
+              <h1>hello!</h1>
+              <h2>I'm Josh, a automotive photographer in Brighton, CO</h2>
+              <Link
+                activeClass="active"
+                to="contact"
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={800}
+              >
+                <p className="work-with-me"> Work With Me</p>
+              </Link>
+            </div>
+            <img src={me} className="me-image" height="500px" alt="me"></img>
+          </section>
+          <section className="my-work" id="projects">
+            <h1>my photo portfolio</h1>
+            <ProjectContainer projects={this.state.projects} />
+          </section>
+          <section className="my-work" id="projects">
+            <h1>my design gallery</h1>
+            <div className="carousel-holder">
+              <Carousel />
+            </div>
+          </section>
+          <section className="about-me" id="about">
+            <div className="tools-about">
+              {this.renderToolImg()}
+              <div className="more-about">
+                <h1 className="summary-head">more about me</h1>
+                <p className="my-summary">
+                  19 year old software developer who attended and graduated
+                  Turing School of Software & Design. Strong passion for
+                  learning. Currently learning Next.js and AWS. I found coding
+                  my freshman year of highschool and fell in love. Outside of
+                  coding my main passion is automobiles. I love going to the
+                  meets on the weekend with my brother and some friends.
+                </p>
+                <div className="social-links">
+                  <a
+                    href="https://www.github.com/josharagon"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img
+                      src={github}
+                      className="social-logo"
+                      alt="my github"
+                    ></img>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/joshua-aragon-854275206/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img
+                      src={linkedin}
+                      className="social-logo"
+                      alt="my linkedin"
+                    ></img>
+                  </a>
+                  <a
+                    href="https://www.twitter.com/aragondev"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img
+                      src={twitter}
+                      className="social-logo"
+                      alt="my twitter"
+                    ></img>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/joshjaragon"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img
+                      src={instagram}
+                      className="social-logo"
+                      alt="my instagram"
+                    ></img>
+                  </a>
+                  <a
+                    href="https://www.youtube.com/channel/UCmZMN0KRFaMr86GeBEoNZIA"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img
+                      src={youtube}
+                      className="social-logo"
+                      alt="my youtube channel"
+                    ></img>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+          <Form />
+        </div>}
         </>
       </ThemeProvider>
     );
