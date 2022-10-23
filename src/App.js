@@ -191,12 +191,10 @@ class App extends Component {
               <div className="more-about">
                 <h1 className="summary-head">more about me</h1>
                 <p className="my-summary">
-                  19 year old software developer who attended and graduated
-                  Turing School of Software & Design. Strong passion for
-                  learning. Currently learning Next.js and AWS. I found coding
-                  my freshman year of highschool and fell in love. Outside of
+                  20 year old software engineer at SeachSpring. Strong passion for
+                  learning. I found coding my freshman year of highschool and fell in love. Outside of
                   coding my main passion is automobiles. I love going to the
-                  meets on the weekend with my brother and some friends.
+                  car meets on the weekend.
                 </p>
                 <div className="social-links">
                   <a
