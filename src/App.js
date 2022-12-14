@@ -220,17 +220,6 @@ class App extends Component {
                     ></img>
                   </a>
                   <a
-                    href="https://www.twitter.com/aragondev"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img
-                      src={twitter}
-                      className="social-logo"
-                      alt="my twitter"
-                    ></img>
-                  </a>
-                  <a
                     href="https://www.instagram.com/joshjaragon"
                     target="_blank"
                     rel="noreferrer"
