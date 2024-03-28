@@ -20,6 +20,7 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./globalStyles.js";
 import { lightTheme, darkTheme } from "./Themes.js";
 import { Link } from "react-scroll";
+import SplashScreen from "./SplashScreen/SplashScreen.js";
 
 class App extends Component {
   constructor() {
@@ -117,6 +118,7 @@ class App extends Component {
       >
         <>
           <GlobalStyles />
+          <SplashScreen />
           <nav className="nav-bar">
             <p>Josh Aragon</p>
             <div className="nav-links">
