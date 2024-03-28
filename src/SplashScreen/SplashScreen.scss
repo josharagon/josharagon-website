@@ -1,3 +1,8 @@
+@font-face {
+    font-family: nfs;
+    src: url('../assets/fonts/NFS.ttf')
+}
+
 /* Keep your keyframes as defined before */
 @keyframes fadeIn {
     from { opacity: 0; }
@@ -21,6 +26,7 @@
     background-color: black; // Or any background color you prefer
     color: white; // Text color
     text-align: center; // Ensure text is centered horizontally
+    font-family: 'NFS'; /* Apply the 'NFS' font family to the splash screen */
   }
   
   .page {
@@ -32,6 +38,9 @@
     gap: 20px; // Add some space between text elements
     opacity: 0; /* Start with invisible content */
     animation: fadeIn 2s ease-in-out forwards;
+    *{
+        font-family: nfs;
+     } /* Apply the 'NFS' font family to the splash screen */
   }
   
   h1 {

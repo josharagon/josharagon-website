@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import './SplashScreen.scss'; // Make sure this points correctly to your CSS file
-
 const pages = [
     {
         id: 1,
@@ -26,7 +25,6 @@ const SplashScreen = () => {
         if (currentPageIndex < pages.length) {
             // Start with fade-in for the first page or after the fade-out of the previous page
             setFadeClass('fade-in');
-
             // Schedule fade-out after the current page has been visible for some time
             const fadeOutTimer = setTimeout(() => {
                 setFadeClass('fade-out');
