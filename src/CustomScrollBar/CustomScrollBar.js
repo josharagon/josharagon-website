@@ -11,14 +11,23 @@ const CustomScrollBar = () => {
     const handleScroll = () => {
         const scrollTop = document.documentElement.scrollTop;
         const scrollHeight = document.documentElement.scrollHeight;
-        const currentScrollPercentage = (scrollTop / scrollHeight) * 100;
+        const clientHeight = document.documentElement.clientHeight || window.innerHeight;
+        const currentScrollPercentage = (scrollTop / (scrollHeight - clientHeight)) * 100;
         setScrollPercentage(currentScrollPercentage);
 
         // Determine the direction of scrolling
         const isScrollingUp = scrollTop < lastScrollTop;
-        setIsReversed(isScrollingUp);
+        const isAtTop = scrollTop === 0;
+        const isAtBottom = scrollTop + window.innerHeight === scrollHeight;
+        // Set isReversed based on scroll direction or if at top/bottom
+        if (isAtTop) {
+            setIsReversed(false);
+        } else if (isAtBottom) {
+            setIsReversed(true);
+        } else {
+            setIsReversed(isScrollingUp);
+        }
 
-        // Update lastScrollTop with the current scroll position
         setLastScrollTop(scrollTop);
     };
 

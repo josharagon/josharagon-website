@@ -2,23 +2,14 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 98%;
     height: 50px;
-    overflow-x: hidden;
+    overflow-x: visible;
     z-index: 1000;
   }
-  
-  .car {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50px; /* Adjust size of the car */
-    height: 30px; /* Adjust size of the car */
-    background-color: red; /* Color of the car */
 
-  }
   .car-image {
-    width: 75px; /* Adjust size as needed */
+    width: 100px; /* Adjust size as needed */
     height: auto;
     position: absolute; /* Adjust position as needed */
     bottom: 0;
@@ -30,7 +21,8 @@
         transform: scaleX(-1);
       }   
 }
-  @keyframes race {
+
+@keyframes race {
     from {
       transform: translateX(-50px); /* Start position of the car */
     }
