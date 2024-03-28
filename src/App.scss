@@ -200,3 +200,7 @@ a {
     flex-direction: column;
   }
 }
+/* Hide the default scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
