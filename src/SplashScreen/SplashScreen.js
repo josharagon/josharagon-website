@@ -33,7 +33,6 @@ const SplashScreen = () => {
             }, 5000); // Time for current page to stay before fading out
 
             // Wait for the fade-out to complete, then change the page and fade it in
-            debugger
             const changePageTimer = setTimeout(() => {
                 if (currentPageIndex + 1 < pages.length) {
                     setCurrentPageIndex(currentPageIndex + 1);
