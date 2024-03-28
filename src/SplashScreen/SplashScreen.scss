@@ -38,30 +38,26 @@
     gap: 20px; // Add some space between text elements
     opacity: 0; /* Start with invisible content */
     animation: fadeIn 2s ease-in-out forwards;
-    *{
+    h1{
         font-family: nfs;
+        font-size: 4vw; // Adjust the font size based on the width of the viewport
      } /* Apply the 'NFS' font family to the splash screen */
+      
+      h2, p {
+        font-size: 2vw; // Smaller text elements adjust as well
+      }
+      
+      // Media queries for smaller devices
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 6vw;
+        }
+      
+        h2, p {
+          font-size: 3vw;
+        }
+      }
   }
-  
-  h1 {
-    font-size: 4vw; // Adjust the font size based on the width of the viewport
-  }
-  
-  h2, p {
-    font-size: 2vw; // Smaller text elements adjust as well
-  }
-  
-  // Media queries for smaller devices
-  @media (max-width: 600px) {
-    h1 {
-      font-size: 6vw;
-    }
-  
-    h2, p {
-      font-size: 3vw;
-    }
-  }
-  
 
   /* Add a class to manage fade-out animation for content */
   .fade-out {
