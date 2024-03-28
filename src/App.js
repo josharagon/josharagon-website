@@ -21,6 +21,7 @@ import { GlobalStyles } from "./globalStyles.js";
 import { lightTheme, darkTheme } from "./Themes.js";
 import { Link } from "react-scroll";
 import SplashScreen from "./SplashScreen/SplashScreen.js";
+import CustomScrollBar from "./CustomScrollBar/CustomScrollBar.js";
 
 class App extends Component {
   constructor() {
@@ -248,6 +249,7 @@ class App extends Component {
             </div>
           </section>
           <Form />
+          <CustomScrollBar />
         </>
       </ThemeProvider>
     );
