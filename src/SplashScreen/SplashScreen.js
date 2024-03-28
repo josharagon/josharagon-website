@@ -21,7 +21,9 @@ const SplashScreen = () => {
     const [isVisible, setIsVisible] = useState(true);
     const [fadeClass, setFadeClass] = useState('fade-in'); // Start with fade-in
 
+
     useEffect(() => {
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
         if (currentPageIndex < pages.length) {
             // Start with fade-in for the first page or after the fade-out of the previous page
             setFadeClass('fade-in');
@@ -29,19 +31,18 @@ const SplashScreen = () => {
             const fadeOutTimer = setTimeout(() => {
                 setFadeClass('fade-out');
             }, 5000); // Time for current page to stay before fading out
-
             // Wait for the fade-out to complete, then change the page and fade it in
             const changePageTimer = setTimeout(() => {
                 if (currentPageIndex + 1 < pages.length) {
                     setCurrentPageIndex(currentPageIndex + 1);
                     // Ensure fade-in starts after fade-out has completed for the next page
-                    setTimeout(() => setFadeClass('fade-in'), 500); // Short delay to ensure fade-out completes
+                    setTimeout(() => setFadeClass('fade-in'), 100); // Short delay to ensure fade-out completes
                 } else {
-                    console.log('running else')
                     // Start the fade-out process for the last piece of content
                     setFadeClass('fade-out');
                     // After the last page, hide the splash screen allowing the last page fade out to complete
-                    setTimeout(() => setIsVisible(false), 5000); // Match this with your fade-out duration
+                    setTimeout(() => setIsVisible(false), 2000); // Match this with your fade-out duration
+                    document.body.style.overflow = 'unset'; // Allow scrolling
                 }
             }, 6000); // This accounts for both the visible time and fade-out time
 

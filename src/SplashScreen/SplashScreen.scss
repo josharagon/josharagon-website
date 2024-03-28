@@ -15,6 +15,7 @@
   }
   
   .splash-screen {
+    z-index: 999999;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,7 +27,7 @@
     background-color: black; // Or any background color you prefer
     color: white; // Text color
     text-align: center; // Ensure text is centered horizontally
-    font-family: 'NFS'; /* Apply the 'NFS' font family to the splash screen */
+    user-select: none;
   }
   
   .page {
@@ -40,7 +41,7 @@
     animation: fadeIn 2s ease-in-out forwards;
     h1{
         font-family: nfs;
-        font-size: 4vw; // Adjust the font size based on the width of the viewport
+        font-size: 3vw; // Adjust the font size based on the width of the viewport
      } /* Apply the 'NFS' font family to the splash screen */
       
       h2, p {
@@ -54,7 +55,7 @@
         }
       
         h2, p {
-          font-size: 3vw;
+          font-size: 2vw;
         }
       }
   }
