@@ -51,28 +51,31 @@ const MusicPlayer = () => {
 
 
     return (
-        <div className="music-player">
-            <audio ref={audioRef} src="/path/to/audio/file.mp3" />
-            <div className="player-controls">
-                <SkipBack size={24} onClick={skipBackward} />
-                {isPlaying ? <Pause size={24} onClick={togglePlay} /> : <Play size={24} onClick={togglePlay} />}
-                <SkipForward size={24} onClick={skipForward} />
-                <div className="volume-icon" onClick={toggleVolume}>
-                    {renderVolumeIcon()}
+        <div className="music-player-container">
+            <div className="music-player">
+                <audio ref={audioRef} src="https://soundcloud.com/morenightmusic/morenight-head-shoulders-knee-toes-refix" />
+                <div className="player-controls">
+                    <SkipBack size={24} onClick={skipBackward} />
+                    {isPlaying ? <Pause size={24} onClick={togglePlay} /> : <Play size={24} onClick={togglePlay} />}
+                    <SkipForward size={24} onClick={skipForward} />
+                    <div className="volume-icon" onClick={toggleVolume}>
+                        {renderVolumeIcon()}
+                    </div>
                 </div>
-                {isPlaying && <ScrollingText />}
+                {isVolumeOpen && (
+                    <input
+                        type="range"
+                        min="0"
+                        max="100"
+                        value={volume}
+                        onChange={handleVolumeChange}
+                        className="volume-slider"
+                    />
+                )}
             </div>
-            {isPlaying && <div className="artist-name">{'blah'}</div>}
-            {isVolumeOpen && (
-                <input
-                    type="range"
-                    min="0"
-                    max="100"
-                    value={volume}
-                    onChange={handleVolumeChange}
-                    className="volume-slider"
-                />
-            )}
+            <div>
+                <ScrollingText />
+            </div>
         </div>
 
     );

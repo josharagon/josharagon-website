@@ -1,8 +1,25 @@
+.music-player-container {
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    z-index: 999; /* Adjust the z-index as needed */
+}
+
+
 .music-player {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px; /* Adjust as needed */
+}
+
+.player-controls > * {
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.player-controls > *:last-child {
+    margin-right: 0; /* Remove margin from the last child to prevent extra space */
 }
 
 .volume-icon {
@@ -21,13 +38,14 @@
 }
 
 .scroll-container {
-    width: 200px; /* Adjust width as needed */
+    width: 100px; /* Adjust width as needed */
     overflow: hidden; /* Hide overflow */
   }
   
   .scrolling-text {
     white-space: nowrap; /* Prevent text from wrapping */
     animation: scroll 10s linear infinite; /* Set up scrolling animation */
+    user-select: none; /* Disable text selection */
   }
   
   @keyframes scroll {
