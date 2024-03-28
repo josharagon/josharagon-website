@@ -1,0 +1,33 @@
+.music-player {
+    button {
+        width: 10vw;
+        color: white;
+        text-align: center;
+        align-self: left;
+        margin: 0 10%;
+        padding: 0px;
+        border-radius: 5px;
+        border: none;
+    }
+
+    display: flex;
+}
+
+.player-controls {
+    display: flex;
+}
+
+.scroll-container {
+    width: 200px; /* Adjust width as needed */
+    overflow: hidden; /* Hide overflow */
+  }
+  
+  .scrolling-text {
+    white-space: nowrap; /* Prevent text from wrapping */
+    animation: scroll 10s linear infinite; /* Set up scrolling animation */
+  }
+  
+  @keyframes scroll {
+    0% { transform: translateX(100%); } /* Start off-screen */
+    100% { transform: translateX(-100%); } /* Move across container */
+  }

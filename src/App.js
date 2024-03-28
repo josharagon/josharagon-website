@@ -10,6 +10,7 @@ import youtube from "./assets/img/youtube.png";
 import airagon from "./assets/img/airagon.png";
 import fightImg from "./assets/img/fighttm.jpeg";
 import carMeetApp from "./assets/img/car-meet-app.png";
+import focusRs from "./assets/img/focus-rs-full.png";
 import * as React from "react";
 import { Component } from "react";
 import Form from "./Form.js";
@@ -22,6 +23,7 @@ import { lightTheme, darkTheme } from "./Themes.js";
 import { Link } from "react-scroll";
 import SplashScreen from "./SplashScreen/SplashScreen.js";
 import CustomScrollBar from "./CustomScrollBar/CustomScrollBar.js";
+import MusicPlayer from "./MusicPlayer/MusicPlayer.js";
 
 class App extends Component {
   constructor() {
@@ -121,7 +123,10 @@ class App extends Component {
           <GlobalStyles />
           <SplashScreen />
           <nav className="nav-bar">
-            <p>Josh Aragon</p>
+            <div className="name-music-container">
+              <p>Josh Aragon</p>
+              <MusicPlayer />
+            </div>
             <div className="nav-links">
               <Link
                 activeClass="active"
@@ -176,7 +181,7 @@ class App extends Component {
                 <p className="work-with-me"> Work With Me</p>
               </Link>
             </div>
-            <img src={me} className="me-image" height="500px" alt="me"></img>
+            <img src={focusRs} className="me-image" height="500px" alt="me"></img>
           </section>
           <section className="my-work" id="projects">
             <h1>my projects</h1>
