@@ -23,7 +23,7 @@ const SplashScreen = () => {
 
 
     useEffect(() => {
-        document.body.style.overflow = 'hidden'; // Prevent scrolling
+        document.body.style.overflowY = 'hidden'; // Prevent scrolling
         if (currentPageIndex < pages.length) {
             // Start with fade-in for the first page or after the fade-out of the previous page
             setFadeClass('fade-in');
@@ -42,7 +42,7 @@ const SplashScreen = () => {
                     setFadeClass('fade-out');
                     // After the last page, hide the splash screen allowing the last page fade out to complete
                     setTimeout(() => setIsVisible(false), 2000); // Match this with your fade-out duration
-                    document.body.style.overflow = 'unset'; // Allow scrolling
+                    document.body.style.overflowY = 'unset'; // Allow scrolling
                 }
             }, 6000); // This accounts for both the visible time and fade-out time
 
