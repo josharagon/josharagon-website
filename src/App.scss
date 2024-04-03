@@ -8,6 +8,9 @@ html {
 
 body {
   margin: 0px 5em 0px 5em;
+  width: 100vw;
+  overflow-x: hidden;
+
 }
 
 .nav-bar {
@@ -66,6 +69,8 @@ a {
 
 .me-image {
   -webkit-user-drag: none;
+  object-fit: contain;
+  max-width: 100vw;
 }
 .my-work {
   padding-top: 80px;

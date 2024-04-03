@@ -1,10 +1,45 @@
 .music-player-container {
+    
     display: flex;
     flex-direction: column;
     position: sticky;
     bottom: 0;
     width: 100%;
     z-index: 999; /* Adjust the z-index as needed */
+
+    .playlist-selector {
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        &.light select {
+            background-color: #fff;
+            color: #000;
+          }
+          
+          &.dark select {
+            background-color: #333;
+            color: #fff;
+          }
+        select {
+          border: 1px solid #555; // Slightly lighter border
+          border-radius: 20px; // Rounded edges
+          padding: 5px 10px; // Some padding for aesthetic
+          outline: none; // Remove default focus outline
+          cursor: pointer; // Cursor indication
+          
+          &:hover {
+            border-color: #777; // Change border on hover for feedback
+          }
+    
+          &:focus {
+            box-shadow: 0 0 5px rgba(81, 203, 238, 1); // Glowing effect on focus
+          }
+    
+          option {
+            background-color: #1a1a1a; // Dark background for options
+            color: white; // Ensure text is visible
+          }
+        }
+      }
 }
 
 

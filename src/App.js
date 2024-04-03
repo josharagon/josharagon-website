@@ -24,6 +24,7 @@ import { Link } from "react-scroll";
 import SplashScreen from "./SplashScreen/SplashScreen.js";
 import CustomScrollBar from "./CustomScrollBar/CustomScrollBar.js";
 import MusicPlayer from "./MusicPlayer/MusicPlayer.js";
+import Dashboard from "./Dashboard/Dashboard.js";
 
 class App extends Component {
   constructor() {
@@ -87,8 +88,8 @@ class App extends Component {
           liveLink: "https://fighttm.com/",
         },
       ],
-      isDarkMode: false,
-      theme: "light",
+      isDarkMode: true,
+      theme: "dark",
     };
   }
 
@@ -121,11 +122,12 @@ class App extends Component {
       >
         <>
           <GlobalStyles />
-          <SplashScreen />
+          {/* <Dashboard /> */}
+          {/* <SplashScreen /> */}
           <nav className="nav-bar">
             <div className="name-music-container">
               <p>Josh Aragon</p>
-              <MusicPlayer />
+              {/* <MusicPlayer isDarkMode={this.state.isDarkMode} /> */}
             </div>
             <div className="nav-links">
               <Link
@@ -199,7 +201,7 @@ class App extends Component {
               <div className="more-about">
                 <h1 className="summary-head">more about me</h1>
                 <p className="my-summary">
-                  20 year old software engineer at SeachSpring. Strong passion for
+                  Support Software engineer at SeachSpring. Strong passion for
                   learning. I found coding my freshman year of highschool and fell in love. Outside of
                   coding my main passion is automobiles. I love going to the
                   car meets on the weekend.

@@ -9,6 +9,7 @@
     "emailjs-com": "^2.6.4",
     "lucide": "^0.363.0",
     "lucide-react": "^0.363.0",
+    "postprocessing": "^6.35.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-responsive-carousel": "^3.2.21",
@@ -18,7 +19,8 @@
     "react-toggle-dark-mode": "^1.0.3",
     "sass": "^1.48.0",
     "styled-components": "^5.2.1",
-    "swiper": "^6.0.2"
+    "swiper": "^6.0.2",
+    "three": "^0.162.0"
   },
   "scripts": {
     "start": "react-scripts start",
