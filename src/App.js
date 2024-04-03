@@ -231,6 +231,17 @@ class App extends Component {
                       alt="my linkedin"
                     ></img>
                   </a>
+                  <a
+                    href="https://www.instagram.com/purecarmedia"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <img
+                      src={instagram}
+                      className="social-logo"
+                      alt="my instagram"
+                    ></img>
+                  </a>
                 </div>
               </div>
             </div>
