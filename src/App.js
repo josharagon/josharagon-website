@@ -25,6 +25,7 @@ import SplashScreen from "./SplashScreen/SplashScreen.js";
 import CustomScrollBar from "./CustomScrollBar/CustomScrollBar.js";
 import MusicPlayer from "./MusicPlayer/MusicPlayer.js";
 import Dashboard from "./Dashboard/Dashboard.js";
+import Bio from "./Modal/Modal.js";
 
 class App extends Component {
   constructor() {
@@ -123,7 +124,7 @@ class App extends Component {
         <>
           <GlobalStyles />
           {/* <Dashboard /> */}
-          <SplashScreen />
+          {/* <SplashScreen /> */}
           <nav className="nav-bar">
             <div className="name-music-container">
               <p>Josh Aragon</p>
@@ -203,9 +204,10 @@ class App extends Component {
                 <p className="my-summary">
                   Support Software engineer at SeachSpring. Strong passion for
                   learning. I found coding my freshman year of highschool and fell in love. Outside of
-                  coding my main passion is automobiles. I love going to the
-                  car meets on the weekend.
+                  coding my main passion is automobiles and DJing. I love going to the
+                  car meets on the weekend. I also love to DJ to relax, it is a constant search for new music and a way to express myself.
                 </p>
+                <Bio />
                 <div className="social-links">
                   <a
                     href="https://www.github.com/josharagon"
@@ -219,7 +221,7 @@ class App extends Component {
                     ></img>
                   </a>
                   <a
-                    href="https://www.linkedin.com/in/joshua-aragon-854275206/"
+                    href="https://www.linkedin.com/in/joshuajaragon/"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -227,28 +229,6 @@ class App extends Component {
                       src={linkedin}
                       className="social-logo"
                       alt="my linkedin"
-                    ></img>
-                  </a>
-                  <a
-                    href="https://www.instagram.com/joshjaragon"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img
-                      src={instagram}
-                      className="social-logo"
-                      alt="my instagram"
-                    ></img>
-                  </a>
-                  <a
-                    href="https://www.youtube.com/channel/UCmZMN0KRFaMr86GeBEoNZIA"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img
-                      src={youtube}
-                      className="social-logo"
-                      alt="my youtube channel"
                     ></img>
                   </a>
                 </div>

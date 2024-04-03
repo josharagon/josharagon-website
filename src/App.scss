@@ -10,7 +10,6 @@ body {
   margin: 0px 5em 0px 5em;
   width: 100vw;
   overflow-x: hidden;
-
 }
 
 .nav-bar {
@@ -112,7 +111,7 @@ a {
   margin-top: 100px;
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 70%;
 }
 
 .social-links {
@@ -128,7 +127,7 @@ a {
 }
 
 .my-summary {
-  font-size: 25px;
+  font-size: 1em;
   text-align: left;
   margin: 0;
 }
@@ -171,6 +170,7 @@ a {
   .my-toolbox {
     width: 350px;
     height: 300px;
+    margin: 10px;
   }
 
   .more-about {

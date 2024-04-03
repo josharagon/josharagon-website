@@ -1,0 +1,50 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; // Ensure modal is above other content
+    transition: 5s ease-in-out;
+    visibility: hidden; /* Initially not visible, but still takes up space */
+    opacity: 0;
+    transition: visibility 0s linear 0.5s, opacity 0.5s;
+  }
+
+  .modal.show {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s; /* Apply transitions immediately when showing the modal */
+  }
+  
+  .modal-content {
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    width: auto; // Adjust based on your content
+    max-width: 90%; // Prevents modal from being too wide on large screens
+    background-color: #363537;
+    box-shadow: #00000069 0px 1px 6px 0px;
+    transition: transform 0.5s, opacity 0.5s;
+    transform: scale(0.7); /* Start smaller */
+    user-select: none;
+
+  }
+
+  .modal-content.show {
+    transform: scale(1); /* Scale to normal size */
+    opacity: 1;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    font-size: large;
+  }
+  
