@@ -207,7 +207,7 @@ class App extends Component {
                   coding my main passion is automobiles and DJing. I love going to the
                   car meets on the weekend. I also love to DJ to relax, it is a constant search for new music and a way to express myself.
                 </p>
-                <Bio />
+                <Bio theme={this.state.theme} />
                 <div className="social-links">
                   <a
                     href="https://www.github.com/josharagon"

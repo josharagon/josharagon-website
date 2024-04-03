@@ -1,14 +1,25 @@
 import React, { useState, useEffect } from 'react'; // Ensure useState is imported
 import { lightTheme, darkTheme } from "../Themes.js";
-import { ThemeProvider } from "styled-components";
+import styled from 'styled-components';
 
 
 import './Modal.scss'; // Make sure this path is correct.
 
-const Modal = ({ isOpen, onClose, children }) => {
+const Modal = ({ isOpen, onClose, children, theme }) => {
     // Use local state to control class addition for transitions
     const [showModal, setShowModal] = useState(false);
-
+    let curTheme = theme === 'light' ? lightTheme : darkTheme;
+    console.log(curTheme);
+    const ModalContent = styled.div`
+        background-color: ${curTheme.background};
+        padding: 20px;
+        border-radius: 5px;
+        position: relative;
+        width: auto;
+        max-width: 90%;
+        box-shadow: #00000069 0px 1px 6px 0px;
+        transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    `;
     useEffect(() => {
         // Trigger the transition in when the modal is opened
         if (isOpen) {
@@ -27,22 +38,21 @@ const Modal = ({ isOpen, onClose, children }) => {
 
     return (
         <div className={`modal ${showModal ? 'show' : ''}`} onClick={handleBackgroundClick}>
-            <div className={`modal-content ${showModal ? 'show' : ''}`} onClick={e => e.stopPropagation()}>
+            <ModalContent className={`modal-content ${showModal ? 'show' : ''}`} onClick={e => e.stopPropagation()}>
                 <span className="close" onClick={handleBackgroundClick}>&times;</span>
                 {children}
-            </div>
+            </ModalContent >
         </div>
     );
 };
 
 // Bio component definition using Modal
-const Bio = () => {
+const Bio = ({ theme }) => {
     const [modalOpen, setModalOpen] = useState(false);
-
     return (
         <div>
             <button onClick={() => setModalOpen(true)}>Read More</button>
-            <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)}>
+            <Modal isOpen={modalOpen} onClose={() => setModalOpen(false)} theme={theme}>
                 <div>
                     <h2>Introduction</h2>
                     <p>As a Support Software Engineer at SearchSpring, I've dedicated myself to not just resolving technical challenges but also to the continuous pursuit of knowledge in the ever-evolving field of technology. My journey into coding began in my freshman year of high school, marking the start of a lifelong passion. Beyond the world of code, my heart beats to the rhythm of automobile engines and music decks, where I immerse myself in the automotive culture and the art of DJing.</p>
