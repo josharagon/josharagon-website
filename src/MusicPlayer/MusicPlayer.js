@@ -3,37 +3,6 @@ import './MusicPlayer.scss'; // Import CSS for styling
 
 import { Play, Pause, Stop, SkipForward, SkipBack, Volume, Volume1, Volume2, VolumeX } from 'lucide-react';
 
-
-const fetchPlaylistDetails = async (accessToken, playlistId) => {
-    try {
-        const response = await fetch(`https://api.spotify.com/v1/playlists/${playlistId}`, {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${accessToken}`,
-                'Content-Type': 'application/json'
-            }
-        });
-
-        if (!response.ok) {
-            throw new Error(`Error: ${response.status}`);
-        }
-
-        const data = await response.json();
-        console.log(data); // Process your data here
-        return data; // Return data for further use
-    } catch (error) {
-        console.error('Failed to fetch playlist details:', error);
-    }
-};
-
-// Example usage
-const accessToken = 'e0b2b7a48ff04343baa6db92b505ceac'; // Replace YOUR_ACCESS_TOKEN with your actual access token
-const playlistId = '37i9dQZF1DWWQRwui0ExPn'; // Replace YOUR_PLAYLIST_ID with your actual playlist ID
-
-fetchPlaylistDetails(accessToken, playlistId);
-
-
-
 const playlists = {
     lofi: '37i9dQZF1DWWQRwui0ExPn',
     deepHouse: '37i9dQZF1DWWQRwui0ExPn',
