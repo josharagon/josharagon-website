@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import image from "./img/airagon.png";
-import image2 from "./img/instagram.png";
+import image from "./assets/img/airagon.png";
+import image2 from "./assets/img/instagram.png";
 import styles from "react-responsive-carousel/lib/styles/carousel.min.css";
-import carMeet from "./img/car-meet-app.png";
+import carMeet from "./assets/img/car-meet-app.png";
 
 class DemoCarousel extends Component {
   render() {

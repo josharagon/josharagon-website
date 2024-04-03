@@ -1,0 +1,73 @@
+@font-face {
+    font-family: nfs;
+    src: url('../assets/fonts/NFS.ttf')
+}
+
+/* Keep your keyframes as defined before */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+  
+  .splash-screen {
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black; // Or any background color you prefer
+    color: white; // Text color
+    text-align: center; // Ensure text is centered horizontally
+    user-select: none;
+  }
+  
+  .page {
+    max-width: 90%; // Limit the width of the content to ensure readability
+    display: flex;
+    flex-direction: column;
+    justify-content: center; // Center content vertically in the page
+    align-items: center; // Center content horizontally in the page
+    gap: 20px; // Add some space between text elements
+    opacity: 0; /* Start with invisible content */
+    animation: fadeIn 2s ease-in-out forwards;
+    h1{
+        font-family: nfs;
+        font-size: 3vw; // Adjust the font size based on the width of the viewport
+     } /* Apply the 'NFS' font family to the splash screen */
+      
+      h2, p {
+        font-size: 2vw; // Smaller text elements adjust as well
+      }
+      
+      // Media queries for smaller devices
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 6vw;
+        }
+      
+        h2, p {
+          font-size: 2vw;
+        }
+      }
+  }
+
+  /* Add a class to manage fade-out animation for content */
+  .fade-out {
+    animation: fadeOut 1s ease-in-out forwards; /* Adjust time as needed */
+  }
+  
+  /* Further styling */
+  .page h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+  }
+  
