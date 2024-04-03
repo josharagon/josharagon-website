@@ -9,7 +9,6 @@ const Modal = ({ isOpen, onClose, children, theme }) => {
     // Use local state to control class addition for transitions
     const [showModal, setShowModal] = useState(false);
     let curTheme = theme === 'light' ? lightTheme : darkTheme;
-    console.log(curTheme);
     const ModalContent = styled.div`
         background-color: ${curTheme.background};
         padding: 20px;
