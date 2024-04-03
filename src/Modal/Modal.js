@@ -19,13 +19,19 @@ const Modal = ({ isOpen, onClose, children, theme }) => {
         max-width: 90%;
         box-shadow: #00000069 0px 1px 6px 0px;
         transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+        width: auto; // Adjust based on your content
+        max-width: 90%; // Prevents modal from being too wide on large screens
+        max-height: 80vh; // Adjust this value as needed
+        overflow-y: auto; // Adds a scrollbar if content overflows
     `;
     useEffect(() => {
         // Trigger the transition in when the modal is opened
         if (isOpen) {
+            document.body.style.overflowY = 'hidden';
             setShowModal(true);
         } else if (!isOpen && showModal) {
             // Begin the transition out, but keep modal "visible" until it completes
+            document.body.style.overflowY = 'unset';
             const timer = setTimeout(() => setShowModal(false), 100); // Match your CSS transition time
             return () => clearTimeout(timer);
         }

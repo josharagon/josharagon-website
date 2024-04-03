@@ -124,7 +124,7 @@ class App extends Component {
         <>
           <GlobalStyles />
           {/* <Dashboard /> */}
-          {/* <SplashScreen /> */}
+          <SplashScreen />
           <nav className="nav-bar">
             <div className="name-music-container">
               <p>Josh Aragon</p>
