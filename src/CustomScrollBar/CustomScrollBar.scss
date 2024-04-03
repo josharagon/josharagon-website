@@ -1,0 +1,33 @@
+.custom-scrollbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 98%;
+    height: 50px;
+    overflow-x: visible;
+    z-index: 1000;
+  }
+
+  .car-image {
+    width: 100px; /* Adjust size as needed */
+    height: auto;
+    position: absolute; /* Adjust position as needed */
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: transform 0.3s ease;
+    user-select: none;
+    &.reversed {
+        transform: scaleX(-1);
+      }   
+}
+
+@keyframes race {
+    from {
+      transform: translateX(-50px); /* Start position of the car */
+    }
+    to {
+      transform: translateX(calc(100vw + 50px)); /* End position of the car */
+    }
+  }
+  

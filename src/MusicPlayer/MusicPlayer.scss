@@ -1,0 +1,89 @@
+.music-player-container {
+    
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    z-index: 999; /* Adjust the z-index as needed */
+
+    .playlist-selector {
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        &.light select {
+            background-color: #fff;
+            color: #000;
+          }
+          
+          &.dark select {
+            background-color: #333;
+            color: #fff;
+          }
+        select {
+          border: 1px solid #555; // Slightly lighter border
+          border-radius: 20px; // Rounded edges
+          padding: 5px 10px; // Some padding for aesthetic
+          outline: none; // Remove default focus outline
+          cursor: pointer; // Cursor indication
+          
+          &:hover {
+            border-color: #777; // Change border on hover for feedback
+          }
+    
+          &:focus {
+            box-shadow: 0 0 5px rgba(81, 203, 238, 1); // Glowing effect on focus
+          }
+    
+          option {
+            background-color: #1a1a1a; // Dark background for options
+            color: white; // Ensure text is visible
+          }
+        }
+      }
+}
+
+
+.music-player {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player-controls > * {
+    margin-right: 10px; /* Adjust the margin as needed */
+}
+
+.player-controls > *:last-child {
+    margin-right: 0; /* Remove margin from the last child to prevent extra space */
+}
+
+.volume-icon {
+    cursor: pointer;
+    margin-right: 10px; /* Adjust as needed */
+}
+
+.volume-slider {
+    display: block;
+    width: 100px; /* Adjust width as needed */
+    margin-left: 10px; /* Adjust as needed */
+}
+
+.player-controls {
+    display: flex;
+}
+
+.scroll-container {
+    width: 100px; /* Adjust width as needed */
+    overflow: hidden; /* Hide overflow */
+  }
+  
+  .scrolling-text {
+    white-space: nowrap; /* Prevent text from wrapping */
+    animation: scroll 10s linear infinite; /* Set up scrolling animation */
+    user-select: none; /* Disable text selection */
+  }
+  
+  @keyframes scroll {
+    0% { transform: translateX(100%); } /* Start off-screen */
+    100% { transform: translateX(-100%); } /* Move across container */
+  }
