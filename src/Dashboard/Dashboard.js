@@ -55,6 +55,8 @@ const Dashboard = (props) => {
     const speedFactorRef = useRef(0);
     const lastDownshiftTimeRef = useRef(0); // Ref to track the last time downshift sound was played
     const downshiftCooldown = 1000;
+    const lastRevTimeRef = useRef(0); // Ref to track the last time downshift sound was played
+    const revCooldown = 4000;
     // Deferred creation of AudioContext and loading of sounds
     let audioContext;
     let idleEngineBuffer, mediumSpeedEngineBuffer, fastSpeedEngineBuffer;
@@ -177,7 +179,11 @@ const Dashboard = (props) => {
         if (engineStarted) {
             const handleKeyDown = (event) => {
                 if (event.key === 'e') {
-                    playRandomRevSound();
+                    const now = Date.now();
+                    if (now - lastRevTimeRef.current > revCooldown) {
+                        playRandomRevSound();
+                        lastRevTimeRef.current = now;
+                    }
                 }
                 if (event.key === 'w') {
                     setSpeed((prevSpeed) => Math.min(prevSpeed + 1, 296));
