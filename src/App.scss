@@ -4,12 +4,17 @@
 html {
   display: flex;
   place-content: center;
+  height: 100vh;
+  width: 100vw;
 }
 
 body {
   margin: 0px 5em 0px 5em;
   width: 100vw;
   overflow-x: hidden;
+  &.dashboard-active {
+    margin: 0;
+  }
 }
 
 .nav-bar {
@@ -66,11 +71,42 @@ a {
   cy: 2px !important;
 }
 
-.me-image {
+.me-image-container {
+  position: relative;
   -webkit-user-drag: none;
   object-fit: contain;
   max-width: 100vw;
+
+  .me-image {
+    transition: opacity 0.2s ease-in-out;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    object-fit: contain;
+    max-width: 100vw;
+    opacity: 1; /* Reduced default opacity */
+
+    &:hover {
+      opacity: .6; /* Full opacity on hover */
+    }
+  }
+
+  .hover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #FFF;
+    font-size: 20px;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.2s ease-in-out;
+    pointer-events: none; /* Ensures the text doesn't interfere with image clicking */
+  }
+
+  &:hover .hover-text {
+    opacity: 1; /* Show text on hover */
+  }
 }
+
 .my-work {
   padding-top: 80px;
   display: flex;

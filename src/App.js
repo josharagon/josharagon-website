@@ -91,6 +91,7 @@ class App extends Component {
       ],
       isDarkMode: true,
       theme: "dark",
+      isDashboardActive: false,
     };
   }
 
@@ -116,140 +117,161 @@ class App extends Component {
     }
   };
 
+  toggleDashboardActive = () => {
+    this.setState(prevState => {
+      // Toggle the class based on the prevState of isDashboardActive
+      if (!prevState.isDashboardActive) {
+        document.body.classList.add('dashboard-active');
+      } else {
+        document.body.classList.remove('dashboard-active');
+      }
+
+      // Return the toggled state
+      return { isDashboardActive: !prevState.isDashboardActive };
+    });
+  };
+
   render() {
     return (
-      <ThemeProvider
-        theme={this.state.theme === "light" ? lightTheme : darkTheme}
-      >
-        <>
-          <GlobalStyles />
-          {/* <Dashboard /> */}
-          <SplashScreen />
-          <nav className="nav-bar">
-            <div className="name-music-container">
-              <p>Josh Aragon</p>
-              {/* <MusicPlayer isDarkMode={this.state.isDarkMode} /> */}
-            </div>
-            <div className="nav-links">
-              <Link
-                activeClass="active"
-                to="about"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={800}
-              >
-                <p>about me</p>
-              </Link>
-              <Link
-                activeClass="active"
-                to="projects"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={800}
-              >
-                <p>my work</p>
-              </Link>
-              <Link
-                activeClass="active"
-                to="contact"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={800}
-              >
-                <p>contact me</p>
-              </Link>
-              <DarkModeSwitch
-                style={{ marginBottom: ".35rem" }}
-                checked={this.state.isDarkMode}
-                size={30}
-                onClick={this.themeToggler}
-              />
-            </div>
-          </nav>
-          <section className="hello-container">
-            <div className="hello-me">
-              <h1>hello!</h1>
-              <h2>I'm Josh, a software developer in Brighton, CO</h2>
-              <Link
-                activeClass="active"
-                to="contact"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={800}
-              >
-                <p className="work-with-me"> Work With Me</p>
-              </Link>
-            </div>
-            <img src={focusRs} className="me-image" height="500px" alt="me"></img>
-          </section>
-          <section className="my-work" id="projects">
-            <h1>my projects</h1>
-            <ProjectContainer projects={this.state.projects} />
-          </section>
-          <section className="my-work" id="projects">
-            <h1>my design gallery</h1>
-            <div className="carousel-holder">
-              <Carousel />
-            </div>
-          </section>
-          <section className="about-me" id="about">
-            <div className="tools-about">
-              {this.renderToolImg()}
-              <div className="more-about">
-                <h1 className="summary-head">more about me</h1>
-                <p className="my-summary">
-                  Support Software engineer at SeachSpring. Strong passion for
-                  learning. I found coding my freshman year of highschool and fell in love. Outside of
-                  coding my main passion is automobiles and DJing. I love going to the
-                  car meets on the weekend. I also love to DJ to relax, it is a constant search for new music and a way to express myself.
-                </p>
-                <Bio theme={this.state.theme} />
-                <div className="social-links">
-                  <a
-                    href="https://www.github.com/josharagon"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img
-                      src={github}
-                      className="social-logo"
-                      alt="my github"
-                    ></img>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/joshuajaragon/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img
-                      src={linkedin}
-                      className="social-logo"
-                      alt="my linkedin"
-                    ></img>
-                  </a>
-                  <a
-                    href="https://www.instagram.com/purecarmedia"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <img
-                      src={instagram}
-                      className="social-logo"
-                      alt="my instagram"
-                    ></img>
-                  </a>
+      <>
+        {
+          this.state.isDashboardActive ? <Dashboard onExitClick={this.toggleDashboardActive} /> :
+            <ThemeProvider
+              theme={this.state.theme === "light" ? lightTheme : darkTheme}
+            >
+              <GlobalStyles />
+              {/* <SplashScreen /> */}
+              <nav className="nav-bar">
+                <div className="name-music-container">
+                  <p>Josh Aragon</p>
+                  {/* <MusicPlayer isDarkMode={this.state.isDarkMode} /> */}
                 </div>
-              </div>
-            </div>
-          </section>
-          <Form />
-          <CustomScrollBar />
-        </>
-      </ThemeProvider>
+                <div className="nav-links">
+                  <Link
+                    activeClass="active"
+                    to="about"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={800}
+                  >
+                    <p>about me</p>
+                  </Link>
+                  <Link
+                    activeClass="active"
+                    to="projects"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={800}
+                  >
+                    <p>my work</p>
+                  </Link>
+                  <Link
+                    activeClass="active"
+                    to="contact"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={800}
+                  >
+                    <p>contact me</p>
+                  </Link>
+                  <DarkModeSwitch
+                    style={{ marginBottom: ".35rem" }}
+                    checked={this.state.isDarkMode}
+                    size={30}
+                    onClick={this.themeToggler}
+                  />
+                </div>
+              </nav>
+              <section className="hello-container">
+                <div className="hello-me">
+                  <h1>hello!</h1>
+                  <h2>I'm Josh, a software developer in Brighton, CO</h2>
+                  <Link
+                    activeClass="active"
+                    to="contact"
+                    spy={true}
+                    smooth={true}
+                    offset={-70}
+                    duration={800}
+                  >
+                    <p className="work-with-me"> Work With Me</p>
+                  </Link>
+                </div>
+                <div className="me-image-container">
+                  <img src={focusRs} className="me-image" height="500px" alt="me"
+                    onClick={this.toggleDashboardActive}
+                  />
+                  <div className="hover-text">Let's Race</div>
+                </div>
+              </section>
+              <section className="my-work" id="projects">
+                <h1>my projects</h1>
+                <ProjectContainer projects={this.state.projects} />
+              </section>
+              <section className="my-work" id="projects">
+                <h1>my design gallery</h1>
+                <div className="carousel-holder">
+                  <Carousel />
+                </div>
+              </section>
+              <section className="about-me" id="about">
+                <div className="tools-about">
+                  {this.renderToolImg()}
+                  <div className="more-about">
+                    <h1 className="summary-head">more about me</h1>
+                    <p className="my-summary">
+                      Support Software engineer at SeachSpring. Strong passion for
+                      learning. I found coding my freshman year of highschool and fell in love. Outside of
+                      coding my main passion is automobiles and DJing. I love going to the
+                      car meets on the weekend. I also love to DJ to relax, it is a constant search for new music and a way to express myself.
+                    </p>
+                    <Bio theme={this.state.theme} />
+                    <div className="social-links">
+                      <a
+                        href="https://www.github.com/josharagon"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <img
+                          src={github}
+                          className="social-logo"
+                          alt="my github"
+                        ></img>
+                      </a>
+                      <a
+                        href="https://www.linkedin.com/in/joshuajaragon/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <img
+                          src={linkedin}
+                          className="social-logo"
+                          alt="my linkedin"
+                        ></img>
+                      </a>
+                      <a
+                        href="https://www.instagram.com/purecarmedia"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <img
+                          src={instagram}
+                          className="social-logo"
+                          alt="my instagram"
+                        ></img>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <Form />
+              <CustomScrollBar />
+            </ThemeProvider>
+        }
+      </>
     );
   }
 }

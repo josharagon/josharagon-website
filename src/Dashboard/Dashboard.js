@@ -45,7 +45,7 @@ const animateSnowfall = (snowflakes) => {
 };
 
 
-const Dashboard = () => {
+const Dashboard = (props) => {
     const refContainer = useRef(null);
     const [speed, setSpeed] = useState(0); // Speed state
     const [engineStarted, setEngineStarted] = useState(false);
@@ -55,13 +55,11 @@ const Dashboard = () => {
     const speedFactorRef = useRef(0);
     const lastDownshiftTimeRef = useRef(0); // Ref to track the last time downshift sound was played
     const downshiftCooldown = 1000;
-
     // Deferred creation of AudioContext and loading of sounds
     let audioContext;
     let idleEngineBuffer, mediumSpeedEngineBuffer, fastSpeedEngineBuffer;
     let idleSource, mediumSource, fastSource;
     let idleGainNode, mediumGainNode, fastGainNode;
-
 
     const getAudioContext = () => {
         if (!audioContext) {
@@ -91,13 +89,14 @@ const Dashboard = () => {
         downShiftBufferRef.current = downShiftBuffer;
         revBuffersRef.current = [revBuffer1]
     };
-    loadEngineSounds();
+
+    useEffect(() => {
+        loadEngineSounds();
+    }, []);
 
     const playEngineSounds = () => {
         // Play idle engine sound
         const context = getAudioContext();
-
-
         idleSource = context.createBufferSource();
         idleSource.buffer = idleEngineBuffer;
         idleSource.loop = true;
@@ -173,8 +172,6 @@ const Dashboard = () => {
         mediumGainNode = gainNodes.mediumGainNode;
         fastGainNode = gainNodes.fastGainNode;
     };
-
-
 
     useEffect(() => {
         if (engineStarted) {
@@ -318,23 +315,20 @@ const Dashboard = () => {
         // Function to create buildings
         const buildings = [];
 
-        const highriseTexture = textureLoader.load('/textures/highrise.jpg');
-        textureLoader.load('/textures/highrise.jpg');
-        highriseTexture.wrapS = THREE.RepeatWrapping; // Repeat the texture along the S (horizontal) axis
-        highriseTexture.wrapT = THREE.RepeatWrapping; // Repeat the texture along the T (vertical) axis
-        const textureRepeatX = 1;
-        const textureRepeatY = 6; // Adjusted according to the size ratio
-        highriseTexture.repeat.set(textureRepeatX, textureRepeatY);
+        const buildingGeometry = new THREE.BoxGeometry(5, 50, 5);
+        const highriseTexture = new THREE.TextureLoader().load('/textures/highrise.jpg');
+        highriseTexture.wrapS = highriseTexture.wrapT = THREE.RepeatWrapping;
+        highriseTexture.repeat.set(1, 6);
+        const buildingMaterial = new THREE.MeshPhongMaterial({ map: highriseTexture });
 
 
         const highriseMaterial = new THREE.MeshPhongMaterial({ map: highriseTexture });
 
         function createBuilding(position, size, highriseMaterial) {
-            const geometry = new THREE.BoxGeometry(size.x, size.y, size.z);
-            const building = new THREE.Mesh(geometry, highriseMaterial);
+            // Use the shared geometry and material
+            const building = new THREE.Mesh(buildingGeometry, buildingMaterial);
             building.position.copy(position);
             scene.add(building);
-            // Add the created building to the buildings array
             buildings.push(building);
         }
 
@@ -346,8 +340,9 @@ const Dashboard = () => {
         function generateBuildings() {
             const startingZ = -roadLength / 2;
             for (let i = 0; i < totalBuildingSegments; i++) {
-                createBuilding(new THREE.Vector3(-10, 5, startingZ + i * buildingSpacing), new THREE.Vector3(5, 50, 5), highriseMaterial);
-                createBuilding(new THREE.Vector3(10, 5, startingZ + i * buildingSpacing), new THREE.Vector3(5, 50, 5), highriseMaterial);
+                // Position buildings on both sides of the road
+                createBuilding(new THREE.Vector3(-10, 5, startingZ + i * buildingSpacing));
+                createBuilding(new THREE.Vector3(10, 5, startingZ + i * buildingSpacing));
             }
         }
 
@@ -530,17 +525,45 @@ const Dashboard = () => {
             renderer.render(scene, camera);
         };
         animate();
+
+        return () => {
+            try { if (idleSource) idleSource.stop(); } catch (error) { console.log('Idle source stopping error', error); }
+            try { if (mediumSource) mediumSource.stop(); } catch (error) { console.log('Medium source stopping error', error); }
+            try { if (fastSource) fastSource.stop(); } catch (error) { console.log('Fast source stopping error', error); }
+
+            if (idleGainNode) idleGainNode.disconnect();
+            if (mediumGainNode) mediumGainNode.disconnect();
+            if (fastGainNode) fastGainNode.disconnect();
+
+            // Dispose of THREE.js resources
+            buildings.forEach(building => {
+                scene.remove(building);
+                // No need to dispose of geometry and material here if they are shared and used elsewhere
+            });
+
+            // Additional cleanup for other THREE.js resources as needed
+            renderer.dispose();
+            buildingGeometry.dispose();
+            buildingMaterial.dispose();
+            // Repeat for road and guardrails if they're not used elsewhere
+        };
     }, []);
     return <div style={{ position: 'relative' }}>
+
+        <button onClick={() => {
+            props.onExitClick();
+        }} className="exit-dashboard-btn">
+            Exit Dashboard
+        </button>
         <div ref={refContainer} style={{ width: '100vw', height: '100vh' }}></div>
         {!engineStarted && <button className="start-engine-button" onClick={initiateAudioAndStartEngine}>Start Engine</button>}
-        <div id="speedometer" style={{ position: 'absolute', bottom: '20px', right: '20px', color: 'white', backgroundColor: 'rgba(0, 0, 0, 0.5)', padding: '10px', borderRadius: '8px' }}>
+        <div id="speedometer">
             Speed: {speed} km/h
         </div>
-        <div id="map" style={{ position: 'absolute', bottom: '20px', left: '20px', width: '150px', height: '150px', backgroundColor: 'rgba(0, 0, 0, 0.5)', borderRadius: '8px', overflow: 'hidden' }}>
-            <div id="playerDot" style={{ width: '10px', height: '10px', backgroundColor: 'white', borderRadius: '50%', position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)' }}></div>
+        <div id="map">
+            <div id="playerDot"></div>
         </div>
-    </div>;
+    </div >;
 };
 
 export default Dashboard;
