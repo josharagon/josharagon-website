@@ -66,7 +66,7 @@ class App extends Component {
           description:
             "A community driven application where senior devs can offer a helping hand for review requests.",
           preview:
-            "https://camo.githubusercontent.com/95a738dc2f4dd094ec98c18bc08176d8cfe8337437e054d3edc3bf677521874f/68747470733a2f2f6779617a6f2e636f6d2f30313864313961636630633638356537663564376133623030306335353562642e706e67",
+            "https://camo.githubusercontent.com/06e42656a0a64acff5e7e28620f0b73c547ce63944f475f3259ab69adfe8160d/68747470733a2f2f692e6779617a6f2e636f6d2f35363635383466306365343733663636353432613664346634623264613963392e676966",
           githubLink: "https://github.com/josharagon/stretch-project",
           liveLink: "",
         },
