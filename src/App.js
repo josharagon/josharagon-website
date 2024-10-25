@@ -214,7 +214,10 @@ class App extends Component {
             </section>
             <section className="my-work" id="projects">
               <h1>my projects</h1>
-              <ProjectContainer projects={this.state.projects} />
+              <ProjectContainer
+                projects={this.state.projects}
+                theme={this.state.theme}
+              />
             </section>
             <section className="my-work" id="projects">
               <h1>my design gallery</h1>

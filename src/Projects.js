@@ -1,6 +1,6 @@
 import Card from "./Card.js";
 
-const ProjectContainer = ({ projects }) => {
+const ProjectContainer = ({ projects, theme }) => {
   const projectCards = projects.map((project) => {
     return (
       <Card
@@ -12,6 +12,7 @@ const ProjectContainer = ({ projects }) => {
         preview={project.preview}
         githubLink={project.githubLink}
         liveLink={project.liveLink}
+        theme={theme}
       />
     );
   });
