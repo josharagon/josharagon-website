@@ -12,6 +12,7 @@ import fightImg from "./assets/img/fighttm.jpeg";
 import carMeetApp from "./assets/img/car-meet-app.png";
 import focusRs from "./assets/img/focus-rs-full.png";
 import crateCo from "./assets/img/crateco.png";
+import setsFindr from "./assets/img/setfindr.png";
 import * as React from "react";
 import { Component } from "react";
 import Form from "./Form.js";
@@ -35,11 +36,11 @@ class App extends Component {
       projects: [
         {
           id: 1,
-          name: "TikTok Clone",
-          description: "Simple TikTok clone built with ReactJS",
-          preview: "https://i.gyazo.com/75730405ab543b1ebc1604e7c8f41dc2.png",
-          githubLink: "https://github.com/josharagon/tiktok-clone/tree/main",
-          liveLink: "https://main.d3f3nok113rcmg.amplifyapp.com/",
+          name: "SetsFindr",
+          description: "Uses Youtube API to find and play random House+UKG dj sets.",
+          preview: setsFindr,
+          githubLink: "https://github.com/josharagon/dj-sets",
+          liveLink: "https://dj-sets-jg6yglvjd-josharagons-projects.vercel.app/",
         },
         {
           id: 2,
