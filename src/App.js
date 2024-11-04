@@ -12,7 +12,7 @@ import fightImg from "./assets/img/fighttm.jpeg";
 import carMeetApp from "./assets/img/car-meet-app.png";
 import focusRs from "./assets/img/focus-rs-full.png";
 import crateCo from "./assets/img/crateco.png";
-import setsFindr from "./assets/img/setfindr.png";
+import setFindr from "./assets/img/setfindr.png";
 import * as React from "react";
 import { Component } from "react";
 import Form from "./Form.js";
@@ -36,9 +36,9 @@ class App extends Component {
       projects: [
         {
           id: 1,
-          name: "SetsFindr",
+          name: "SetFindr",
           description: "Uses Youtube API to find and play random House+UKG dj sets.",
-          preview: setsFindr,
+          preview: setFindr,
           githubLink: "https://github.com/josharagon/dj-sets",
           liveLink: "https://dj-sets-jg6yglvjd-josharagons-projects.vercel.app/",
         },
