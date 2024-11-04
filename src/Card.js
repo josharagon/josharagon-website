@@ -1,9 +1,12 @@
 import React from "react";
 import "./Card.scss";
 
-const Card = ({ name, description, preview, githubLink, liveLink }) => {
+const Card = ({ name, description, preview, githubLink, liveLink, theme }) => {
   return (
-    <article className="project-cards">
+    <article
+      className="project-cards"
+      style={{ backgroundColor: theme === "dark" ? "#363537" : "white" }}
+    >
       <h2>{name}</h2>
       <p>{description}</p>
       <img
